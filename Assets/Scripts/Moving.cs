@@ -56,9 +56,13 @@ public class Moving : MonoBehaviour
             airGlide = true;
         }
 
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             anim.SetTrigger("jump");
+        }
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            anim.SetTrigger("Wave");
         }
     }
 

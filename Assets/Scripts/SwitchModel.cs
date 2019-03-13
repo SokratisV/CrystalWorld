@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SwitchModel : MonoBehaviour
 {
@@ -7,18 +6,30 @@ public class SwitchModel : MonoBehaviour
     public Avatar[] avatars;
     public GameObject playerObject;
     private GameObject tempModel;
-    private int index = 0;
+    public int index = 0;
+
+    private void Start()
+    {
+        ChangeModel();
+    }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            tempModel = GameObject.Instantiate<GameObject>(models[index], playerObject.transform);
-            //Add tag model and destroy that, fix for T pose extra model
-            GameObject.Destroy(playerObject.transform.GetChild(0).gameObject);
-            playerObject.GetComponent<Animator>().avatar = avatars[index];
-            AdvanceIndex();
+            ChangeModel();
         }
+    }
+    
+    private void ChangeModel()
+    {
+        if (transform.childCount > 0)
+        {
+            Destroy(playerObject.transform.GetChild(0).gameObject);
+        }
+        tempModel = Instantiate(models[index], playerObject.transform);
+        playerObject.GetComponent<Animator>().avatar = avatars[index];
+        AdvanceIndex();
     }
 
     private void AdvanceIndex()
