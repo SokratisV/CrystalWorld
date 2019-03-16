@@ -83,6 +83,7 @@
     <Compile Include="Assets\Scripts\SwitchModel.cs" />
     <Compile Include="Assets\Scripts\TerrainDetector.cs" />
     <Compile Include="Assets\Scripts\WallJump.cs" />
+    <Compile Include="Assets\TeleportToSpawn.cs" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
