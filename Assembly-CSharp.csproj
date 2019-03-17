@@ -89,7 +89,7 @@
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\Imported\SineVFX\TranslucentCrystals\Readme.txt" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
-    <None Include="Assets\MedievalTownExteriors\Readme.txt" />
+    <None Include="Assets\Imported\MedievalTownExteriors\Readme.txt" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\Imported\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
