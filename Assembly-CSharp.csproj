@@ -70,7 +70,9 @@
     <Compile Include="Assets\Scripts\Climbing.cs" />
     <Compile Include="Assets\Scripts\ClimbingUp.cs" />
     <Compile Include="Assets\Scripts\Footsteps.cs" />
+    <Compile Include="Assets\Scripts\FPSCounter.cs" />
     <Compile Include="Assets\Scripts\JumpForce.cs" />
+    <Compile Include="Assets\Scripts\MaterialChanger.cs" />
     <Compile Include="Assets\Scripts\MeshCombiner.cs" />
     <Compile Include="Assets\Scripts\MeshCombinerEditor.cs" />
     <Compile Include="Assets\Scripts\MeshSaverEditor.cs" />
@@ -81,9 +83,12 @@
     <Compile Include="Assets\Scripts\Respawn.cs" />
     <Compile Include="Assets\Scripts\Slope.cs" />
     <Compile Include="Assets\Scripts\SwitchModel.cs" />
+    <Compile Include="Assets\Scripts\TeleportToSpawn.cs" />
     <Compile Include="Assets\Scripts\TerrainDetector.cs" />
+    <Compile Include="Assets\Scripts\TigerScript.cs" />
+    <Compile Include="Assets\Scripts\TurnBasedOnCamera.cs" />
     <Compile Include="Assets\Scripts\WallJump.cs" />
-    <Compile Include="Assets\TeleportToSpawn.cs" />
+    <Compile Include="Assets\Scripts\WindmillRotation.cs" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
