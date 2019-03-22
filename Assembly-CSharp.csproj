@@ -76,6 +76,7 @@
     <Compile Include="Assets\Scripts\ColorPalette.cs" />
     <Compile Include="Assets\Scripts\Footsteps.cs" />
     <Compile Include="Assets\Scripts\FPSCounter.cs" />
+    <Compile Include="Assets\Scripts\GameManagement.cs" />
     <Compile Include="Assets\Scripts\GenerateQuestions.cs" />
     <Compile Include="Assets\Scripts\JumpForce.cs" />
     <Compile Include="Assets\Scripts\MaterialChanger.cs" />
@@ -88,7 +89,6 @@
     <Compile Include="Assets\Scripts\Moving.cs" />
     <Compile Include="Assets\Scripts\MuteSounds.cs" />
     <Compile Include="Assets\Scripts\OnMouseOver.cs" />
-    <Compile Include="Assets\Scripts\PauseGame.cs" />
     <Compile Include="Assets\Scripts\PopulateGrid.cs" />
     <Compile Include="Assets\Scripts\PopulateGridv1.cs" />
     <Compile Include="Assets\Scripts\PopulateGridWord.cs" />

@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class Climbing : MonoBehaviour
 {
+    public bool allowClimbing = true;
+
     private Animator anim;
     private float InputX, InputZ;
     private WaitForSeconds delayRespawn = new WaitForSeconds(2f);
@@ -16,16 +17,19 @@ public class Climbing : MonoBehaviour
 
     void Update()
     {
-        InputX = Input.GetAxis("Horizontal");
-        InputZ = Input.GetAxis("Vertical");
-
-        if (Input.GetKeyDown("space"))
+        if (allowClimbing)
         {
-            anim.SetTrigger("wallJump");
-            anim.SetBool("isClimbing", false);
-            //rb.velocity = Vector3.back * 10;
+            InputX = Input.GetAxis("Horizontal");
+            InputZ = Input.GetAxis("Vertical");
+
+            if (Input.GetKeyDown("space"))
+            {
+                anim.SetTrigger("wallJump");
+                anim.SetBool("isClimbing", false);
+                //rb.velocity = Vector3.back * 10;
+            }
+            PlayerClimb(InputX, InputZ);
         }
-        PlayerClimb(InputX, InputZ);
     }
 
     void PlayerClimb(float InputX, float InputZ)

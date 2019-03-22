@@ -6,6 +6,7 @@ public class Moving : MonoBehaviour
     public float desiredRotationSpeed;
     public Camera cam;
     public int jumpForce = 50, glideForce = 1500;
+    public bool allowMovement = true;
 
     private Animator anim;
     private float InputX, InputZ, distanceToTheGround = 1.7f;
@@ -30,40 +31,44 @@ public class Moving : MonoBehaviour
 
     void Update()
     {
-        InputX = Input.GetAxis("Horizontal");
-        InputZ = Input.GetAxis("Vertical");
+        if (allowMovement)
+        {
+            InputX = Input.GetAxis("Horizontal");
+            InputZ = Input.GetAxis("Vertical");
 
-        if (Grounded())
-        {
-            anim.SetBool("falling", false);
-            if (!coroutineStarted)
+            if (Grounded())
             {
-                allowAnimation = false;
-                coroutineStarted = true;
-                StartCoroutine(DelayAnimation());
-            }
-            PlayerMoveAndRotation(InputX, InputZ);
-        }
-        else
-        {
-            if (timer > 0.5f)
-            {
-                if (allowAnimation)
+                anim.SetBool("falling", false);
+                if (!coroutineStarted)
                 {
-                    anim.SetBool("falling", true);
+                    allowAnimation = false;
+                    coroutineStarted = true;
+                    StartCoroutine(DelayAnimation());
                 }
+                PlayerMoveAndRotation(InputX, InputZ);
             }
-            airGlide = true;
-        }
+            else
+            {
+                if (timer > 0.5f)
+                {
+                    if (allowAnimation)
+                    {
+                        anim.SetBool("falling", true);
+                    }
+                }
+                airGlide = true;
+            }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            anim.SetTrigger("jump");
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                anim.SetTrigger("jump");
+            }
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                anim.SetTrigger("Wave");
+            }
         }
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            anim.SetTrigger("Wave");
-        }
+        
     }
 
     private void FixedUpdate()

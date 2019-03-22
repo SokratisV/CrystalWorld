@@ -20,7 +20,6 @@ GameObject:
   - component: {fileID: 3919478856758921453}
   - component: {fileID: 399465136340387301}
   - component: {fileID: 5881406564755804883}
-  - component: {fileID: 6002561470938990206}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -339,17 +338,3 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6994764076907f5468f6ed5f73548507, type: 3}
   - {fileID: 8300000, guid: 1b06688076468d248ba4554a13a8ffa1, type: 3}
   - {fileID: 8300000, guid: 5d2af4856fbfbfe43a2faa50866e700a, type: 3}
---- !u!114 &6002561470938990206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1199339045989574443}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bafdf5be1b4191488176a44390be9d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cinemachineObject: {fileID: 0}
-  isPaused: 0
