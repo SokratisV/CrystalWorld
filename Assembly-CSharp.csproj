@@ -78,7 +78,9 @@
     <Compile Include="Assets\Scripts\FPSCounter.cs" />
     <Compile Include="Assets\Scripts\GameManagement.cs" />
     <Compile Include="Assets\Scripts\GenerateQuestions.cs" />
+    <Compile Include="Assets\Scripts\JSONHelper.cs" />
     <Compile Include="Assets\Scripts\JumpForce.cs" />
+    <Compile Include="Assets\Scripts\LoadFromJSON.cs" />
     <Compile Include="Assets\Scripts\MaterialChanger.cs" />
     <Compile Include="Assets\Scripts\MemoryClass.cs" />
     <Compile Include="Assets\Scripts\MemoryClassv1.cs" />
@@ -92,6 +94,7 @@
     <Compile Include="Assets\Scripts\PopulateGrid.cs" />
     <Compile Include="Assets\Scripts\PopulateGridv1.cs" />
     <Compile Include="Assets\Scripts\PopulateGridWord.cs" />
+    <Compile Include="Assets\Scripts\Questions.cs" />
     <Compile Include="Assets\Scripts\ResetAnimatorInputs.cs" />
     <Compile Include="Assets\Scripts\ResetValue.cs" />
     <Compile Include="Assets\Scripts\Respawn.cs" />

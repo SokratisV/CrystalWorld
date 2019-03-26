@@ -32,7 +32,7 @@ public class GameManagement : MonoBehaviour
         {
             if (isPaused)
             {
-                Pause();
+                EscapeMenuPause();
             }
             else
             {
@@ -42,12 +42,29 @@ public class GameManagement : MonoBehaviour
                 }
                 else
                 {
-                    Pause();
+                    EscapeMenuPause();
                 }
             }
         }       
     }
     public void Pause()
+    {
+        if (isPaused)
+        {
+            isPaused = false;
+            movementScript.allowMovement = true;
+            climbingScript.allowClimbing = true;
+            Time.timeScale = 1;
+        }
+        else
+        {
+            isPaused = true;
+            movementScript.allowMovement = false;
+            climbingScript.allowClimbing = false;
+            Time.timeScale = 0;
+        }
+    }
+    public void EscapeMenuPause()
     {
         if (isPaused)
         {

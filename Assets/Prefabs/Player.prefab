@@ -73,6 +73,7 @@ MonoBehaviour:
   cam: {fileID: 0}
   jumpForce: 1550
   glideForce: 1500
+  allowMovement: 1
 --- !u!114 &6067659510809529841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85,6 +86,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad25b6fde6b56344fb9c45c5edb565b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  allowClimbing: 1
 --- !u!136 &3317873051357119182
 CapsuleCollider:
   m_ObjectHideFlags: 0

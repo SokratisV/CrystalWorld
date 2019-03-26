@@ -6,6 +6,12 @@ TagManager:
   tags:
   - ClimbBottom
   - ClimbTop
+  - Canvas
+  - PanelContainer
+  - CountDown
+  - ScoreText
+  - RestartButton
+  - AttemptsText
   layers:
   - Default
   - TransparentFX
@@ -20,7 +26,7 @@ TagManager:
   - Player
   - World Objects
   - Boat
-  - 
+  - Water
   - 
   - 
   - 

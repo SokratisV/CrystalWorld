@@ -23,7 +23,7 @@ public class SwitchModel : MonoBehaviour
     
     private void ChangeModel()
     {
-        if (transform.childCount > 0)
+        if (playerObject.transform.childCount > 0)
         {
             Destroy(playerObject.transform.GetChild(0).gameObject);
         }
