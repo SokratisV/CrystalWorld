@@ -12,6 +12,7 @@ TagManager:
   - ScoreText
   - RestartButton
   - AttemptsText
+  - QuestionsUI
   layers:
   - Default
   - TransparentFX
@@ -27,8 +28,8 @@ TagManager:
   - World Objects
   - Boat
   - Water
-  - 
-  - 
+  - IgnoreCameraCollision
+  - RhinoPoints
   - 
   - 
   - 

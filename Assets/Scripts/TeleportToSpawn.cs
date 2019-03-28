@@ -3,6 +3,12 @@
 public class TeleportToSpawn : MonoBehaviour
 {
     public Transform spawnPoints;
+    private Transform lastSpawnPoint;
+
+    private void Start()
+    {
+        SetLastSpawn(0);
+    }
 
     void Update()
     {
@@ -23,5 +29,19 @@ public class TeleportToSpawn : MonoBehaviour
     private void Teleport(Transform point)
     {
         transform.position = point.position;
+    }
+
+    public void SetLastSpawn(int spawnNumber)
+    {
+        if (spawnNumber >= spawnPoints.childCount || spawnNumber < 0)
+        {
+            spawnNumber = 0;
+        }
+        lastSpawnPoint = spawnPoints.GetChild(spawnNumber);
+    }
+
+    public void Respawn()
+    {
+        transform.position = lastSpawnPoint.position;
     }
 }

@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\ClimbingUp.cs" />
     <Compile Include="Assets\Scripts\ColorChange.cs" />
     <Compile Include="Assets\Scripts\ColorPalette.cs" />
+    <Compile Include="Assets\Scripts\Eaten.cs" />
     <Compile Include="Assets\Scripts\Footsteps.cs" />
     <Compile Include="Assets\Scripts\FPSCounter.cs" />
     <Compile Include="Assets\Scripts\GameManagement.cs" />
@@ -85,8 +86,6 @@
     <Compile Include="Assets\Scripts\MemoryClass.cs" />
     <Compile Include="Assets\Scripts\MemoryClassv1.cs" />
     <Compile Include="Assets\Scripts\MeshCombiner.cs" />
-    <Compile Include="Assets\Scripts\MeshCombinerEditor.cs" />
-    <Compile Include="Assets\Scripts\MeshSaverEditor.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />
     <Compile Include="Assets\Scripts\Moving.cs" />
     <Compile Include="Assets\Scripts\MuteSounds.cs" />
@@ -98,6 +97,7 @@
     <Compile Include="Assets\Scripts\ResetAnimatorInputs.cs" />
     <Compile Include="Assets\Scripts\ResetValue.cs" />
     <Compile Include="Assets\Scripts\Respawn.cs" />
+    <Compile Include="Assets\Scripts\RhinoAI.cs" />
     <Compile Include="Assets\Scripts\SizeAdjuster.cs" />
     <Compile Include="Assets\Scripts\Slope.cs" />
     <Compile Include="Assets\Scripts\SwitchGame.cs" />
