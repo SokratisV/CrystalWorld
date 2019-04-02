@@ -10,14 +10,11 @@ public class LoadFromJSON : MonoBehaviour
     public Button[] answers;
     //public TextMeshProUGUI points;
     public GameObject questionsUICanvas;
-    public GameObject player;
-    //public GameObject cameraBase;
     public AudioClip correctSound;
     public AudioClip incorrectSound;
     //public TextMeshProUGUI score;
     public TextMeshProUGUI source;
     //public Button skipQuestionButton;
-    //public static GameObject lastQuestionAreaTrigger = null;
     public static bool isQuestionsUIActive = false;
 
     private AudioSource audioSource;
@@ -31,7 +28,7 @@ public class LoadFromJSON : MonoBehaviour
 
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        audioSource = GetComponents<AudioSource>()[1];
         if (audioSource != null)
         {
             audioSource.volume = .5f;

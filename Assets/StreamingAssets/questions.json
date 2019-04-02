@@ -1,0 +1,123 @@
+{
+	"Items": [{
+		"question": "Which of the following terms is NOT used to describe a mineral's luster?",
+		"points": "10",
+		"ID": "0",
+		"answers": ["Shiny", "Glassy", "Dull", "Hexagonal"],
+		"difficulty": "1",
+		"correctAnswer": "4",
+		"source": "https://www.proprofs.com/quiz-school/quizshow.php?title=minerals-quiz&q=1"
+	}, {
+		"question": "Which of the following is considered a special property that applies to only a few minerals?",
+		"points": "200",
+		"ID": "2",
+		"answers": ["Color", "Luster", "Streak", "Magnetism"],
+		"difficulty": "1",
+		"correctAnswer": "4",
+		"source": "https://www.proprofs.com/quiz-school/quizshow.php?title=minerals-quiz&q=1"
+	}, {
+		"question": "Which of the following physical properties can be expressed in numbers?",
+		"points": "200",
+		"ID": "2",
+		"answers": ["Luster", "Hardness", "Color", "Reaction to acid"],
+		"difficulty": "1",
+		"correctAnswer": "2",
+		"source": "https://www.proprofs.com/quiz-school/quizshow.php?title=minerals-quiz&q=1"
+	}, {
+		"question": "The most common classification of minerals is based on",
+		"points": "200",
+		"ID": "2",
+		"answers": ["Color", "Chemical composition", "Size", "Shape"],
+		"difficulty": "1",
+		"correctAnswer": "3",
+		"source": "https://www.proprofs.com/quiz-school/quizshow.php?title=minerals-quiz&q=1"
+	}, {
+		"question": "On Moh's hardness scale, which of the following minerals is harder than quartz?",
+		"points": "200",
+		"ID": "2",
+		"answers": ["Apatite", "Talc", "Gypsum", "Diamond"],
+		"difficulty": "1",
+		"correctAnswer": "4",
+		"source": "https://www.proprofs.com/quiz-school/quizshow.php?title=minerals-quiz&q=1"
+	}, {
+		"question": "The special property used to identify halite is",
+		"points": "200",
+		"ID": "2",
+		"answers": ["Radioactivity", "Magnetism", "Fluorescence", "Taste"],
+		"difficulty": "1",
+		"correctAnswer": "4",
+		"source": "https://www.proprofs.com/quiz-school/quizshow.php?title=minerals-quiz&q=1"
+	}, {
+		"question": "A mineral fizzes when a weak acid is dropped on it, the mineral is probably",
+		"points": "200",
+		"ID": "2",
+		"answers": ["Halite", "Magnetite", "Calcite", "Quartz"],
+		"difficulty": "1",
+		"correctAnswer": "3",
+		"source": "https://www.proprofs.com/quiz-school/quizshow.php?title=minerals-quiz&q=1"
+	}, {
+		"question": "What do all rocks have in common?",
+		"points": "200",
+		"ID": "2",
+		"answers": ["Same size", "Same color", "They all have minerals", "Same shape"],
+		"difficulty": "1",
+		"correctAnswer": "3",
+		"source": "http://www.softschools.com/quizzes/science/rock_and_mineral/quiz808.html"
+	}, {
+		"question": "What is the difference between a rock and a mineral?",
+		"points": "200",
+		"ID": "2",
+		"answers": ["A mineral is more valuable", "A rock is made of minerals", "A rock is prettier", "A and B"],
+		"difficulty": "1",
+		"correctAnswer": "4",
+		"source": "http://www.softschools.com/quizzes/science/rock_and_mineral/quiz808.html"
+	}, {
+		"question": "Where are rocks and minerals found?",
+		"points": "200",
+		"ID": "2",
+		"answers": ["Earth's crust", "Earth's inner core", "Earth's outer core"],
+		"difficulty": "1",
+		"correctAnswer": "1",
+		"source": "http://www.softschools.com/quizzes/science/rock_and_mineral/quiz808.html"
+	}, {
+		"question": "Hardness is a property that helps identify minerals. Scientists use a scale of 1-10 to show the hardness of a mineral. What number would be given to the hardest?",
+		"points": "200",
+		"ID": "2",
+		"answers": ["10", "5", "0", "1"],
+		"difficulty": "1",
+		"correctAnswer": "1",
+		"source": "http://www.softschools.com/quizzes/science/rock_and_mineral/quiz808.html"
+	}, {
+		"question": "Minerals have different properties that help scientists identify them. Which is not a property used to identify minerals?",
+		"points": "200",
+		"ID": "2",
+		"answers": ["Color", "Hardness", "Size", "Luster"],
+		"difficulty": "1",
+		"correctAnswer": "3",
+		"source": "http://www.softschools.com/quizzes/science/rock_and_mineral/quiz808.html"
+	}, {
+		"question": "What are the three types of rocks?",
+		"points": "200",
+		"ID": "2",
+		"answers": ["Igneous, Sedimentary, Metamorphic", "Igneous, Hematite, Feldspar", "Mica, Sedimentary, Metamorphic", "Pyrite, Sedimentary, Igneous"],
+		"difficulty": "1",
+		"correctAnswer": "1",
+		"source": "http://www.softschools.com/quizzes/science/rock_and_mineral/quiz808.html"
+	}, {
+		"question": "Which rock forms from melted rock - either from magma below Earth's crust or from lava above it?",
+		"points": "200",
+		"ID": "2",
+		"answers": ["Sedimentary", "Igneous", "Metamorphic", "Diamond"],
+		"difficulty": "1",
+		"correctAnswer": "2",
+		"source": "http://www.softschools.com/quizzes/science/rock_and_mineral/quiz808.html"
+	}, {
+		"question": "Metamorphic rocks form deep inside Earth from other types of rocks. Which forces produce metamorphic rocks?",
+		"points": "200",
+		"ID": "2",
+		"answers": ["Rain and snow", "Extreme pressures and temperatures", "Strong winds and earthquakes"],
+		"difficulty": "1",
+		"correctAnswer": "2",
+		"source": "http://www.softschools.com/quizzes/science/rock_and_mineral/quiz808.html"
+	}]
+}

@@ -12,15 +12,15 @@ public class TeleportToSpawn : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Keypad1))
         {
             Teleport(spawnPoints.GetChild(0));
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        else if (Input.GetKeyDown(KeyCode.Keypad2))
         {
             Teleport(spawnPoints.GetChild(1));
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        else if (Input.GetKeyDown(KeyCode.Keypad3))
         {
             Teleport(spawnPoints.GetChild(2));
         }
