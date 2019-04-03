@@ -12,16 +12,8 @@ public class SwitchModel : MonoBehaviour
     {
         ChangeModel();
     }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            ChangeModel();
-        }
-    }
     
-    private void ChangeModel()
+    public void ChangeModel()
     {
         if (playerObject.transform.childCount > 0)
         {

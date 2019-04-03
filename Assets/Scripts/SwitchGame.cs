@@ -8,20 +8,26 @@ public class SwitchGame : MonoBehaviour {
     private int whichPrefabIsActive = 0;
     private GameObject activeMiddlePanel;
     public TextMeshProUGUI gameNameText;
+    public GameObject backgroundOfGames; //previous owner of script, MiniGamesUI--> Background
+    public GameObject miniGamesUI;
 
     private void Awake()
     {
-        activeMiddlePanel = Instantiate(prefabGames[whichPrefabIsActive], transform);
+        activeMiddlePanel = Instantiate(prefabGames[whichPrefabIsActive], backgroundOfGames.transform);
         activeMiddlePanel.name = prefabGames[whichPrefabIsActive].name;
         gameNameText.text = "Game: " + activeMiddlePanel.name;
         StartCoroutine(EndOfFrame());
+    }
+    public void ToggleMiniGames()
+    {
+        miniGamesUI.SetActive(!miniGamesUI.activeSelf);
     }
     public void ChangeGame()
     {
         Destroy(activeMiddlePanel);
         whichPrefabIsActive++;
         whichPrefabIsActive = whichPrefabIsActive % prefabGames.Length;
-        activeMiddlePanel = Instantiate(prefabGames[whichPrefabIsActive], transform);
+        activeMiddlePanel = Instantiate(prefabGames[whichPrefabIsActive], backgroundOfGames.transform);
         activeMiddlePanel.name = prefabGames[whichPrefabIsActive].name;
         ResetUIText();
         gameNameText.text = "Game: " + activeMiddlePanel.name;
@@ -30,7 +36,7 @@ public class SwitchGame : MonoBehaviour {
     public void RestartCurrent()
     {
         Destroy(activeMiddlePanel);
-        activeMiddlePanel = Instantiate(prefabGames[whichPrefabIsActive], transform);
+        activeMiddlePanel = Instantiate(prefabGames[whichPrefabIsActive], backgroundOfGames.transform);
         activeMiddlePanel.name = prefabGames[whichPrefabIsActive].name;
         gameNameText.text = "Game: " + activeMiddlePanel.name;
         StartCoroutine(EndOfFrame());
@@ -45,8 +51,8 @@ public class SwitchGame : MonoBehaviour {
     private IEnumerator EndOfFrame()
     {
         yield return new WaitForEndOfFrame();
-        GetComponent<AdjustSize>().ChangeSize(activeMiddlePanel);
+        backgroundOfGames.GetComponent<AdjustSize>().ChangeSize(activeMiddlePanel);
         yield return new WaitForEndOfFrame();
-        GetComponent<ColorPalette>().AdjustColors();
+        backgroundOfGames.GetComponent<ColorPalette>().AdjustColors();
     }
 }

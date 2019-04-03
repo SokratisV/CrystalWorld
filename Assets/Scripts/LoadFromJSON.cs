@@ -29,10 +29,6 @@ public class LoadFromJSON : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponents<AudioSource>()[1];
-        if (audioSource != null)
-        {
-            audioSource.volume = .5f;
-        }
         defaultButtonColors = new ColorBlock();
         cb = new ColorBlock();
         defaultButtonColors = answers[0].colors;
@@ -67,10 +63,6 @@ public class LoadFromJSON : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F2))
-        {
-            ToggleQuestionMenu();
-        }
         if (questionsUICanvas.activeSelf)
         {
             if (Input.GetKeyDown(KeyCode.F3))
@@ -127,6 +119,7 @@ public class LoadFromJSON : MonoBehaviour
         }
         questionsUICanvas.SetActive(!questionsUICanvas.activeSelf);
         //CheckForQuestionSkip();
+        GetComponent<GameManagement>().Pause();
     }
     public void GetNextQuestion()
     {
@@ -259,7 +252,7 @@ public class LoadFromJSON : MonoBehaviour
         {
             b.interactable = false;
         }
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSecondsRealtime(1.5f);
         ToggleQuestionMenu();
         foreach (Button b in answers)
         {
@@ -267,7 +260,6 @@ public class LoadFromJSON : MonoBehaviour
         }
         answers[buttonNumber - 1].colors = defaultButtonColors;
     }
-
     //Creating a JSON file by hand adds a lot of spaces/newlines and makes it unusable with ReadAllText
     //Alternatively use browserling.com/tools/remove-all-whitespace and jsonlint to correct it
     public void CreateProperJsonFile()
@@ -277,7 +269,6 @@ public class LoadFromJSON : MonoBehaviour
         File.WriteAllText(Application.dataPath + "/test.json", JsonHelper.ToJson<Questions>(QuestionsFromJson, true));
         //Alternatively use browserling.com/tools/remove-all-whitespace and jsonlint to correct it
     }
-
     private int GetCurrentAnswerIndex()
     {
         if (index != 0)

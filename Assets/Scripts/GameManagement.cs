@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManagement : MonoBehaviour
 {
@@ -45,7 +46,27 @@ public class GameManagement : MonoBehaviour
                     EscapeMenuPause();
                 }
             }
-        }       
+        }
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            GetComponent<SwitchModel>().ChangeModel();
+        }
+        if (Input.GetKeyDown(KeyCode.F2))
+        {
+            //if (GetComponent<SwitchGame>().miniGamesUI.activeSelf)
+            //{
+            //    ToggleMiniGames();
+            //}
+            ToggleQuestions();
+        }
+        //if (Input.GetKeyDown(KeyCode.F3))
+        //{
+        //    if (GetComponent<LoadFromJSON>().questionsUICanvas.activeSelf)
+        //    {
+        //        ToggleQuestions();
+        //    }
+        //    ToggleMiniGames();
+        //}
     }
     public void Pause()
     {
@@ -115,5 +136,17 @@ public class GameManagement : MonoBehaviour
     public void ChangePixelError(float value)
     {
         terrain.heightmapPixelError = value;
+    }
+    public void ChangeScene(int index)
+    {
+        SceneManager.LoadScene(index);
+    }
+    public void ToggleQuestions()
+    {
+        GetComponent<LoadFromJSON>().ToggleQuestionMenu();
+    }
+    public void ToggleMiniGames()
+    {
+        GetComponent<SwitchGame>().ToggleMiniGames();
     }
 }
