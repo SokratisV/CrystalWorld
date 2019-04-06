@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManagement : MonoBehaviour
 {
@@ -8,6 +10,8 @@ public class GameManagement : MonoBehaviour
     public GameObject player;
     public Terrain terrain;
     public GameObject cinemachineCamera;
+    public Slider educationalSlider;
+    public PostProcessProfile profile;
 
     [SerializeField]
     private bool isPaused = false;
@@ -148,5 +152,29 @@ public class GameManagement : MonoBehaviour
     public void ToggleMiniGames()
     {
         GetComponent<SwitchGame>().ToggleMiniGames();
+    }
+    public void SaveSliderValue()
+    {
+        PlayerOptions.EducationalSlider = (int)educationalSlider.value;
+    }
+    public void ControlVSync(bool value)
+    {
+        if (value)
+        {
+            QualitySettings.vSyncCount = 1;
+        }
+        else
+        {
+            QualitySettings.vSyncCount = 0;
+        }
+    }
+    public void ControlMotionBlur(bool value)
+    {
+        if (value)
+        {         
+        }
+        else
+        {
+        }
     }
 }

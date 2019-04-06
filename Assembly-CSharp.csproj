@@ -60,9 +60,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Imported\living birds\scripts\lb_Bird.cs" />
-    <Compile Include="Assets\Imported\living birds\scripts\lb_BirdController.cs" />
-    <Compile Include="Assets\Imported\living birds\scripts\lb_CrowProximity.cs" />
     <Compile Include="Assets\Scripts\AdjustCellSize.cs" />
     <Compile Include="Assets\Scripts\AdjustCharacterHeight.cs" />
     <Compile Include="Assets\Scripts\AdjustCollider.cs" />
@@ -70,19 +67,24 @@
     <Compile Include="Assets\Scripts\AdjustColorPalette.cs" />
     <Compile Include="Assets\Scripts\AdjustHeight.cs" />
     <Compile Include="Assets\Scripts\AdjustSize.cs" />
+    <Compile Include="Assets\Scripts\AnimalCrystalQuest.cs" />
     <Compile Include="Assets\Scripts\Climbing.cs" />
     <Compile Include="Assets\Scripts\ClimbingUp.cs" />
     <Compile Include="Assets\Scripts\ColorChange.cs" />
     <Compile Include="Assets\Scripts\ColorPalette.cs" />
+    <Compile Include="Assets\Scripts\CrystalPickup.cs" />
+    <Compile Include="Assets\Scripts\CrystalPiecesPickup.cs" />
     <Compile Include="Assets\Scripts\Eaten.cs" />
     <Compile Include="Assets\Scripts\Footsteps.cs" />
     <Compile Include="Assets\Scripts\FPSCounter.cs" />
     <Compile Include="Assets\Scripts\GameManagement.cs" />
+    <Compile Include="Assets\Scripts\GameProgress.cs" />
     <Compile Include="Assets\Scripts\GenerateQuestions.cs" />
     <Compile Include="Assets\Scripts\JSONHelper.cs" />
     <Compile Include="Assets\Scripts\JumpForce.cs" />
     <Compile Include="Assets\Scripts\LoadFromJSON.cs" />
     <Compile Include="Assets\Scripts\MaterialChanger.cs" />
+    <Compile Include="Assets\Scripts\MazeCrystalQuest.cs" />
     <Compile Include="Assets\Scripts\MemoryClass.cs" />
     <Compile Include="Assets\Scripts\MemoryClassv1.cs" />
     <Compile Include="Assets\Scripts\MeshCombiner.cs" />
@@ -90,14 +92,17 @@
     <Compile Include="Assets\Scripts\Moving.cs" />
     <Compile Include="Assets\Scripts\MuteSounds.cs" />
     <Compile Include="Assets\Scripts\OnMouseOver.cs" />
+    <Compile Include="Assets\Scripts\PlayerOptions.cs" />
     <Compile Include="Assets\Scripts\PopulateGrid.cs" />
     <Compile Include="Assets\Scripts\PopulateGridv1.cs" />
     <Compile Include="Assets\Scripts\PopulateGridWord.cs" />
+    <Compile Include="Assets\Scripts\Quest.cs" />
     <Compile Include="Assets\Scripts\Questions.cs" />
     <Compile Include="Assets\Scripts\ResetAnimatorInputs.cs" />
     <Compile Include="Assets\Scripts\ResetValue.cs" />
     <Compile Include="Assets\Scripts\Respawn.cs" />
     <Compile Include="Assets\Scripts\RhinoAI.cs" />
+    <Compile Include="Assets\Scripts\RhinoKnockback.cs" />
     <Compile Include="Assets\Scripts\SizeAdjuster.cs" />
     <Compile Include="Assets\Scripts\Slope.cs" />
     <Compile Include="Assets\Scripts\SwitchGame.cs" />
@@ -106,6 +111,7 @@
     <Compile Include="Assets\Scripts\TerrainDetector.cs" />
     <Compile Include="Assets\Scripts\TigerScript.cs" />
     <Compile Include="Assets\Scripts\TurnBasedOnCamera.cs" />
+    <Compile Include="Assets\Scripts\VillageCrystalQuest.cs" />
     <Compile Include="Assets\Scripts\WallJump.cs" />
     <Compile Include="Assets\Scripts\WindmillRotation.cs" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
@@ -127,6 +133,7 @@
     <None Include="Assets\Imported\SineVFX\TranslucentCrystals\Resources\Shaders\SkyboxProceduralDesaturated.shader" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
+    <None Include="Assets\FREE Food Pack\Shaders\Food.shader" />
     <None Include="Assets\Imported\CalmWater\Shaders\SeansWater.shader" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />

@@ -13,6 +13,7 @@ TagManager:
   - RestartButton
   - AttemptsText
   - QuestionsUI
+  - Collectible
   layers:
   - Default
   - TransparentFX

@@ -7,6 +7,7 @@ public class RhinoAI : MonoBehaviour
     public GameObject crystal;
     public float attackDistance = 5f;
     public GameObject eatingPlaces;
+    public int rhinoSpeed;
     
     private float distance;
     private Animator anim;
@@ -41,7 +42,7 @@ public class RhinoAI : MonoBehaviour
                 lookPosition.y = 0;
                 rotation = Quaternion.LookRotation(lookPosition);
                 transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 3);
-                rb.MovePosition(transform.position + transform.forward * Time.deltaTime * 4);
+                rb.MovePosition(transform.position + transform.forward * Time.deltaTime * rhinoSpeed);
                 anim.SetBool("Chasing", true);
             }
         }
@@ -63,7 +64,7 @@ public class RhinoAI : MonoBehaviour
         if (collision.transform.tag == "Player")
         {
             StartCoroutine(KillPlayer());
-            collision.gameObject.GetComponent<TeleportToSpawn>().Respawn();
+            collision.gameObject.GetComponent<RhinoKnockback>().TriggerKnockBack();
         }
     }
 
@@ -101,7 +102,7 @@ public class RhinoAI : MonoBehaviour
     {
         anim.SetBool("Chasing", false);
         anim.SetBool("Walking", false);
-        anim.Play("shout");
+        anim.SetTrigger("Attack");
         playerKilled = true;
         yield return eatingTime;
         playerKilled = false;
