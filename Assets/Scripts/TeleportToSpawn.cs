@@ -1,8 +1,14 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class TeleportToSpawn : MonoBehaviour
 {
     public Transform spawnPoints;
+    public GameObject player;
+    public GameObject cinemachineVCam;
+    public GameObject questionsMenuUI;
+
+    private WaitForSeconds delay = new WaitForSeconds(0.25f);
     private Transform lastSpawnPoint;
 
     private void Start()
@@ -14,21 +20,22 @@ public class TeleportToSpawn : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Keypad1))
         {
-            Teleport(spawnPoints.GetChild(0));
+            Respawn(0);
         }
         else if (Input.GetKeyDown(KeyCode.Keypad2))
         {
-            Teleport(spawnPoints.GetChild(1));
+            Respawn(1);
         }
         else if (Input.GetKeyDown(KeyCode.Keypad3))
         {
-            Teleport(spawnPoints.GetChild(2));
+            Respawn(2);
         }
     }
 
     private void Teleport(Transform point)
     {
-        transform.position = point.position;
+        cinemachineVCam.SetActive(false);
+        player.transform.position = point.position;
     }
 
     public void SetLastSpawn(int spawnNumber)
@@ -40,8 +47,24 @@ public class TeleportToSpawn : MonoBehaviour
         lastSpawnPoint = spawnPoints.GetChild(spawnNumber);
     }
 
-    public void Respawn()
+    private void RespawnDebug()
     {
         transform.position = lastSpawnPoint.position;
+    }
+
+    public void Respawn(int point)
+    {
+        print("Respawning");
+        Teleport(spawnPoints.GetChild(point));
+        GetComponent<GameManagement>().Pause();
+        StartCoroutine(TurnOffMenu());
+    }
+
+    private IEnumerator TurnOffMenu()
+    {
+        yield return delay;
+        cinemachineVCam.SetActive(true);
+        print("I'm in");
+        questionsMenuUI.SetActive(false);
     }
 }

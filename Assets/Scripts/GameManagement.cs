@@ -72,6 +72,9 @@ public class GameManagement : MonoBehaviour
         //    ToggleMiniGames();
         //}
     }
+    /*
+     * Pauses and unpauses game.
+     */
     public void Pause()
     {
         if (isPaused)

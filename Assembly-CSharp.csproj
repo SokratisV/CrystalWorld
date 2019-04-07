@@ -107,6 +107,7 @@
     <Compile Include="Assets\Scripts\Slope.cs" />
     <Compile Include="Assets\Scripts\SwitchGame.cs" />
     <Compile Include="Assets\Scripts\SwitchModel.cs" />
+    <Compile Include="Assets\Scripts\TeleportMenu.cs" />
     <Compile Include="Assets\Scripts\TeleportToSpawn.cs" />
     <Compile Include="Assets\Scripts\TerrainDetector.cs" />
     <Compile Include="Assets\Scripts\TigerScript.cs" />
@@ -133,7 +134,7 @@
     <None Include="Assets\Imported\SineVFX\TranslucentCrystals\Resources\Shaders\SkyboxProceduralDesaturated.shader" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
-    <None Include="Assets\FREE Food Pack\Shaders\Food.shader" />
+    <None Include="Assets\Imported\FREE Food Pack\Shaders\Food.shader" />
     <None Include="Assets\Imported\CalmWater\Shaders\SeansWater.shader" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
