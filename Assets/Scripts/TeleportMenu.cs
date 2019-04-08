@@ -2,7 +2,7 @@
 
 public class TeleportMenu : MonoBehaviour
 {
-    public GameObject questionsMenuUI;
+    public GameObject shipMenuUI;
     public GameObject gameManager;
 
     private void OnTriggerEnter(Collider other)
@@ -10,7 +10,7 @@ public class TeleportMenu : MonoBehaviour
         if (other.tag == "Player")
         {
             gameManager.GetComponent<GameManagement>().Pause();
-            questionsMenuUI.SetActive(true);
+            shipMenuUI.SetActive(true);
         }
     }
 }

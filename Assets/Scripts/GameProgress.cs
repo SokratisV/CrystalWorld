@@ -5,6 +5,7 @@ public class GameProgress : MonoBehaviour
     private bool villageCrystalCollected;
     private bool mazeCrystalCollected;
     private bool animalCrystalCollected;
+    private NPCDialog dialogScript;
 
     public GameObject villageCrystal;
     public GameObject mazeCrystal;
@@ -19,6 +20,8 @@ public class GameProgress : MonoBehaviour
         villageCrystal.GetComponent<Quest>().OnQuestComplete += GameProgress_OnQuestComplete;
         mazeCrystal.GetComponent<Quest>().OnQuestComplete += GameProgress_OnQuestComplete;
         animalCrystal.GetComponent<Quest>().OnQuestComplete += GameProgress_OnQuestComplete;
+
+        dialogScript = GetComponent<NPCDialog>();
     }
 
     private void GameProgress_OnQuestComplete(object sender, System.EventArgs e)
@@ -27,12 +30,15 @@ public class GameProgress : MonoBehaviour
         {
             case "village":
                 villageCrystalCollected = true;
+                dialogScript.ShowDialog(1);
                 break;
             case "maze":
                 mazeCrystalCollected = true;
+                dialogScript.ShowDialog(2);
                 break;
             case "animal":
                 animalCrystalCollected = true;
+                dialogScript.ShowDialog(4);
                 break;
             default:
                 print("Unknown quest");
@@ -40,7 +46,7 @@ public class GameProgress : MonoBehaviour
         }
         if (villageCrystalCollected && mazeCrystalCollected && animalCrystalCollected)
         {
-            print("Grats you won!");
+            dialogScript.ShowDialog(5);
         }
     }
 }

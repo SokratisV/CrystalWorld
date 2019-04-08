@@ -12,6 +12,7 @@ public class GameManagement : MonoBehaviour
     public GameObject cinemachineCamera;
     public Slider educationalSlider;
     public PostProcessProfile profile;
+    public GameObject shipMenuUI;
 
     [SerializeField]
     private bool isPaused = false;
@@ -62,6 +63,10 @@ public class GameManagement : MonoBehaviour
             //    ToggleMiniGames();
             //}
             ToggleQuestions();
+        }
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            ActivateTeleportMenu();
         }
         //if (Input.GetKeyDown(KeyCode.F3))
         //{
@@ -131,6 +136,11 @@ public class GameManagement : MonoBehaviour
     public void Exit()
     {
         Application.Quit();
+    }
+    public void ActivateTeleportMenu()
+    {
+        Pause();
+        shipMenuUI.SetActive(true);
     }
     public void ChangeFOV(float value)
     {

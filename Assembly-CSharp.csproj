@@ -60,6 +60,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DeathZone.cs" />
+    <Compile Include="Assets\NPCDialog.cs" />
     <Compile Include="Assets\Scripts\AdjustCellSize.cs" />
     <Compile Include="Assets\Scripts\AdjustCharacterHeight.cs" />
     <Compile Include="Assets\Scripts\AdjustCollider.cs" />
@@ -74,6 +76,7 @@
     <Compile Include="Assets\Scripts\ColorPalette.cs" />
     <Compile Include="Assets\Scripts\CrystalPickup.cs" />
     <Compile Include="Assets\Scripts\CrystalPiecesPickup.cs" />
+    <Compile Include="Assets\Scripts\DeleteAfterDelay.cs" />
     <Compile Include="Assets\Scripts\Eaten.cs" />
     <Compile Include="Assets\Scripts\Footsteps.cs" />
     <Compile Include="Assets\Scripts\FPSCounter.cs" />
@@ -114,11 +117,12 @@
     <Compile Include="Assets\Scripts\TurnBasedOnCamera.cs" />
     <Compile Include="Assets\Scripts\VillageCrystalQuest.cs" />
     <Compile Include="Assets\Scripts\WallJump.cs" />
-    <Compile Include="Assets\Scripts\WindmillRotation.cs" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\Imported\SineVFX\TranslucentCrystals\Readme.txt" />
+    <None Include="Assets\Imported\Fireflies\Shaders\FireFly.shader" />
+    <None Include="Assets\Imported\Almgp_particle_vol_1\shaders\emmision_particle.shader" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\Imported\MedievalTownExteriors\Readme.txt" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
@@ -134,7 +138,7 @@
     <None Include="Assets\Imported\SineVFX\TranslucentCrystals\Resources\Shaders\SkyboxProceduralDesaturated.shader" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
-    <None Include="Assets\Imported\FREE Food Pack\Shaders\Food.shader" />
+    <None Include="Assets\Imported\FoodPack\Shaders\Food.shader" />
     <None Include="Assets\Imported\CalmWater\Shaders\SeansWater.shader" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
