@@ -13,6 +13,7 @@ public class GameManagement : MonoBehaviour
     public Slider educationalSlider;
     public PostProcessProfile profile;
     public GameObject shipMenuUI;
+    public GameObject controlsPanel;
 
     [SerializeField]
     private bool isPaused = false;
@@ -20,6 +21,7 @@ public class GameManagement : MonoBehaviour
     private Moving movementScript;
     private Climbing climbingScript;
     private Cinemachine.CinemachineFreeLook cinemachineScript;
+    private Animator controlsPanelAnimator;
 
     private void Start()
     {
@@ -30,6 +32,7 @@ public class GameManagement : MonoBehaviour
         movementScript = player.GetComponent<Moving>();
         climbingScript = player.GetComponent<Climbing>();
         cinemachineScript = cinemachineCamera.GetComponent<Cinemachine.CinemachineFreeLook>();
+        controlsPanelAnimator = controlsPanel.GetComponent<Animator>();
     }
 
     void Update()
@@ -67,6 +70,14 @@ public class GameManagement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F1))
         {
             ActivateTeleportMenu();
+        }
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            controlsPanelAnimator.SetTrigger("Enable");
+        }
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            controlsPanelAnimator.SetTrigger("Disable");
         }
         //if (Input.GetKeyDown(KeyCode.F3))
         //{

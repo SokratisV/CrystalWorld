@@ -63,12 +63,7 @@ public class Moving : MonoBehaviour
             {
                 anim.SetTrigger("jump");
             }
-            if (Input.GetKeyDown(KeyCode.Mouse0))
-            {
-                anim.SetTrigger("Wave");
-            }
         }
-        
     }
 
     private void FixedUpdate()
@@ -140,6 +135,8 @@ public class Moving : MonoBehaviour
             GetComponent<Climbing>().enabled = true;
             anim.SetBool("isClimbing", true);
             enabled = false;
+            transform.position = collision.transform.position;
+            transform.LookAt(collision.transform.parent);
         }
     }
 

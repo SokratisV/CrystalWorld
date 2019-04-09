@@ -60,8 +60,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\DeathZone.cs" />
-    <Compile Include="Assets\NPCDialog.cs" />
+    <Compile Include="Assets\CheckForFood.cs" />
+    <Compile Include="Assets\FoodPickup.cs" />
+    <Compile Include="Assets\RhinoSleep.cs" />
     <Compile Include="Assets\Scripts\AdjustCellSize.cs" />
     <Compile Include="Assets\Scripts\AdjustCharacterHeight.cs" />
     <Compile Include="Assets\Scripts\AdjustCollider.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="Assets\Scripts\ColorPalette.cs" />
     <Compile Include="Assets\Scripts\CrystalPickup.cs" />
     <Compile Include="Assets\Scripts\CrystalPiecesPickup.cs" />
+    <Compile Include="Assets\Scripts\DeathZone.cs" />
     <Compile Include="Assets\Scripts\DeleteAfterDelay.cs" />
     <Compile Include="Assets\Scripts\Eaten.cs" />
     <Compile Include="Assets\Scripts\Footsteps.cs" />
@@ -94,6 +96,7 @@
     <Compile Include="Assets\Scripts\Movement.cs" />
     <Compile Include="Assets\Scripts\Moving.cs" />
     <Compile Include="Assets\Scripts\MuteSounds.cs" />
+    <Compile Include="Assets\Scripts\NPCDialog.cs" />
     <Compile Include="Assets\Scripts\OnMouseOver.cs" />
     <Compile Include="Assets\Scripts\PlayerOptions.cs" />
     <Compile Include="Assets\Scripts\PopulateGrid.cs" />
@@ -114,9 +117,11 @@
     <Compile Include="Assets\Scripts\TeleportToSpawn.cs" />
     <Compile Include="Assets\Scripts\TerrainDetector.cs" />
     <Compile Include="Assets\Scripts\TigerScript.cs" />
+    <Compile Include="Assets\Scripts\TriggerDialog.cs" />
     <Compile Include="Assets\Scripts\TurnBasedOnCamera.cs" />
     <Compile Include="Assets\Scripts\VillageCrystalQuest.cs" />
     <Compile Include="Assets\Scripts\WallJump.cs" />
+    <Compile Include="Assets\ThrowFood.cs" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
@@ -134,6 +139,7 @@
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\Imported\TropicalIslandPack1\README.txt" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\Imported\Ladder\LowPolyShaders\Shaders\LowPolyPBRShader.shader" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\Imported\SineVFX\TranslucentCrystals\Resources\Shaders\SkyboxProceduralDesaturated.shader" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />

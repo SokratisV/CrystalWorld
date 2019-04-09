@@ -5,19 +5,19 @@ using System.Collections;
 public class NPCDialog : MonoBehaviour
 {
     public GameObject npcUI;
-    [TextArea][SerializeField]
+    [TextArea][SerializeField] //0
     private string InitialDialog;
-    [TextArea][SerializeField]
+    [TextArea][SerializeField] //1
     private string VillageQuestCompleted;
-    [TextArea][SerializeField]
+    [TextArea][SerializeField] //2 
     private string MazeQuestCompleted;
-    [TextArea][SerializeField]
+    [TextArea][SerializeField] //3
     private string AnimalProblem;
-    [TextArea][SerializeField]
+    [TextArea][SerializeField] //4
     private string AnimalQuestCompleted;
-    [TextArea][SerializeField]
+    [TextArea][SerializeField] //5
     private string DefaultText;
-    [TextArea][SerializeField]
+    [TextArea][SerializeField] //6
     private string WinGame;
 
     private TextMeshProUGUI dialogText;
@@ -25,12 +25,13 @@ public class NPCDialog : MonoBehaviour
     private bool isActive = false;
     private bool uiCloseDelay = false;
     private WaitForSeconds delay;
+    private int currentDialog = 0;
 
     private void Start()
     {
         dialogText = npcUI.GetComponentInChildren<TextMeshProUGUI>();
         anim = npcUI.GetComponentInChildren<Animator>();
-        delay = new WaitForSeconds(2f);
+        delay = new WaitForSeconds(4f);
     }
     private void Update()
     {
@@ -46,6 +47,24 @@ public class NPCDialog : MonoBehaviour
             }
         }
     }
+
+    public void ShowCurrentDialog()
+    {
+        ShowDialog(currentDialog);
+    }
+
+    public void ShowDefaultDialog()
+    {
+        if (currentDialog == 0)
+        {
+            ShowDialog(0);
+        }
+        else
+        {
+            ShowDialog(5);
+        }
+    }
+
     public void ToggleUI()
     {
         isActive = !isActive;
@@ -81,16 +100,15 @@ public class NPCDialog : MonoBehaviour
     }
     public void ShowDialog(int number)
     {
+        currentDialog = number;
         UseCorrectText(number);
         ToggleUI();
     }
-
     private IEnumerator UiCloseDelay()
     {
         uiCloseDelay = false;
         yield return delay;
         uiCloseDelay = true;
-
     }
 
 }

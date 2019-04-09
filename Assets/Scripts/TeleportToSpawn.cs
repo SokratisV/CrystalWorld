@@ -35,6 +35,7 @@ public class TeleportToSpawn : MonoBehaviour
     public void DeathRespawn()
     {
         Teleport(spawnPoints.GetChild(0));
+        cinemachineVCam.SetActive(true);
     }
     public void Respawn(int point)
     {
@@ -46,7 +47,6 @@ public class TeleportToSpawn : MonoBehaviour
     {
         yield return delay;
         cinemachineVCam.SetActive(true);
-        print("I'm in");
         shipMenuUI.SetActive(false);
     }
 }

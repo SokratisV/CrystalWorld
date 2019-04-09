@@ -30,14 +30,17 @@ public class GameProgress : MonoBehaviour
         {
             case "village":
                 villageCrystalCollected = true;
+                villageCrystal.GetComponent<Quest>().OnQuestComplete -= GameProgress_OnQuestComplete;
                 dialogScript.ShowDialog(1);
                 break;
             case "maze":
                 mazeCrystalCollected = true;
+                mazeCrystal.GetComponent<Quest>().OnQuestComplete -= GameProgress_OnQuestComplete;
                 dialogScript.ShowDialog(2);
                 break;
             case "animal":
                 animalCrystalCollected = true;
+                animalCrystal.GetComponent<Quest>().OnQuestComplete -= GameProgress_OnQuestComplete;
                 dialogScript.ShowDialog(4);
                 break;
             default:

@@ -10,5 +10,9 @@ public class DeathZone : MonoBehaviour
         {
             gameManager.GetComponent<TeleportToSpawn>().DeathRespawn();
         }
+        else if (other.tag == "Collectible")
+        {
+            Destroy(other.gameObject);
+        }
     }
 }
