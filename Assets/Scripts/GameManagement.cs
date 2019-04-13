@@ -22,6 +22,7 @@ public class GameManagement : MonoBehaviour
     private Climbing climbingScript;
     private Cinemachine.CinemachineFreeLook cinemachineScript;
     private Animator controlsPanelAnimator;
+    private bool minigameQuestionSwitch = false;
 
     private void Start()
     {
@@ -61,10 +62,6 @@ public class GameManagement : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.F2))
         {
-            //if (GetComponent<SwitchGame>().miniGamesUI.activeSelf)
-            //{
-            //    ToggleMiniGames();
-            //}
             ToggleQuestions();
         }
         if (Input.GetKeyDown(KeyCode.F1))
@@ -79,14 +76,10 @@ public class GameManagement : MonoBehaviour
         {
             controlsPanelAnimator.SetTrigger("Disable");
         }
-        //if (Input.GetKeyDown(KeyCode.F3))
-        //{
-        //    if (GetComponent<LoadFromJSON>().questionsUICanvas.activeSelf)
-        //    {
-        //        ToggleQuestions();
-        //    }
-        //    ToggleMiniGames();
-        //}
+        if (Input.GetKeyDown(KeyCode.F5))
+        {
+            ToggleMiniGames();
+        }
     }
     /*
      * Pauses and unpauses game.

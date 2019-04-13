@@ -6,11 +6,12 @@ public class SwitchModel : MonoBehaviour
     public Avatar[] avatars;
     public GameObject playerObject;
     private GameObject tempModel;
-    public int index = 0;
+    private int index = 0;
+    public PlayerSettings playerSettings;
 
     private void Start()
     {
-        ChangeModel();
+        ChooseModel(playerSettings.character);
     }
     
     public void ChangeModel()
@@ -22,6 +23,12 @@ public class SwitchModel : MonoBehaviour
         tempModel = Instantiate(models[index], playerObject.transform);
         playerObject.GetComponent<Animator>().avatar = avatars[index];
         AdvanceIndex();
+    }
+
+    public void ChooseModel(int number)
+    {
+        tempModel = Instantiate(models[index], playerObject.transform);
+        playerObject.GetComponent<Animator>().avatar = avatars[index];
     }
 
     private void AdvanceIndex()

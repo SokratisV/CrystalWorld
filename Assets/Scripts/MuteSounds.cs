@@ -2,24 +2,17 @@
 
 public class MuteSounds : MonoBehaviour {
 
-    public Camera gameCamera;
     private bool muted = false;
 
     public void Mute()
     {
         if (muted)
         {
-            foreach (AudioSource item in GetComponentsInChildren<AudioSource>())
-            {
-                item.volume = 1f;
-            }
+            GetComponent<AudioSource>().volume = .5f;
         }
         else
         {
-            foreach (AudioSource item in GetComponentsInChildren<AudioSource>())
-            {
-                item.volume = 0f;
-            }
+            GetComponent<AudioSource>().volume = 0f;
         }
         muted = !muted;
     }

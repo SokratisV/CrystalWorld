@@ -60,9 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CheckForFood.cs" />
-    <Compile Include="Assets\FoodPickup.cs" />
-    <Compile Include="Assets\RhinoSleep.cs" />
+    <Compile Include="Assets\Imported\Standard Assets\Utility\FPSCounter.cs" />
     <Compile Include="Assets\Scripts\AdjustCellSize.cs" />
     <Compile Include="Assets\Scripts\AdjustCharacterHeight.cs" />
     <Compile Include="Assets\Scripts\AdjustCollider.cs" />
@@ -71,6 +69,7 @@
     <Compile Include="Assets\Scripts\AdjustHeight.cs" />
     <Compile Include="Assets\Scripts\AdjustSize.cs" />
     <Compile Include="Assets\Scripts\AnimalCrystalQuest.cs" />
+    <Compile Include="Assets\Scripts\CheckForFood.cs" />
     <Compile Include="Assets\Scripts\Climbing.cs" />
     <Compile Include="Assets\Scripts\ClimbingUp.cs" />
     <Compile Include="Assets\Scripts\ColorChange.cs" />
@@ -80,11 +79,12 @@
     <Compile Include="Assets\Scripts\DeathZone.cs" />
     <Compile Include="Assets\Scripts\DeleteAfterDelay.cs" />
     <Compile Include="Assets\Scripts\Eaten.cs" />
+    <Compile Include="Assets\Scripts\FindPairs.cs" />
+    <Compile Include="Assets\Scripts\FoodPickup.cs" />
     <Compile Include="Assets\Scripts\Footsteps.cs" />
-    <Compile Include="Assets\Scripts\FPSCounter.cs" />
     <Compile Include="Assets\Scripts\GameManagement.cs" />
     <Compile Include="Assets\Scripts\GameProgress.cs" />
-    <Compile Include="Assets\Scripts\GenerateQuestions.cs" />
+    <Compile Include="Assets\Scripts\GenerateEquations.cs" />
     <Compile Include="Assets\Scripts\JSONHelper.cs" />
     <Compile Include="Assets\Scripts\JumpForce.cs" />
     <Compile Include="Assets\Scripts\LoadFromJSON.cs" />
@@ -99,16 +99,18 @@
     <Compile Include="Assets\Scripts\NPCDialog.cs" />
     <Compile Include="Assets\Scripts\OnMouseOver.cs" />
     <Compile Include="Assets\Scripts\PlayerOptions.cs" />
-    <Compile Include="Assets\Scripts\PopulateGrid.cs" />
-    <Compile Include="Assets\Scripts\PopulateGridv1.cs" />
+    <Compile Include="Assets\Scripts\PlayerSettings.cs" />
+    <Compile Include="Assets\Scripts\PlayMiniGame.cs" />
     <Compile Include="Assets\Scripts\PopulateGridWord.cs" />
     <Compile Include="Assets\Scripts\Quest.cs" />
     <Compile Include="Assets\Scripts\Questions.cs" />
+    <Compile Include="Assets\Scripts\RememberSquares.cs" />
     <Compile Include="Assets\Scripts\ResetAnimatorInputs.cs" />
     <Compile Include="Assets\Scripts\ResetValue.cs" />
     <Compile Include="Assets\Scripts\Respawn.cs" />
     <Compile Include="Assets\Scripts\RhinoAI.cs" />
     <Compile Include="Assets\Scripts\RhinoKnockback.cs" />
+    <Compile Include="Assets\Scripts\RhinoSleep.cs" />
     <Compile Include="Assets\Scripts\SizeAdjuster.cs" />
     <Compile Include="Assets\Scripts\Slope.cs" />
     <Compile Include="Assets\Scripts\SwitchGame.cs" />
@@ -116,12 +118,12 @@
     <Compile Include="Assets\Scripts\TeleportMenu.cs" />
     <Compile Include="Assets\Scripts\TeleportToSpawn.cs" />
     <Compile Include="Assets\Scripts\TerrainDetector.cs" />
+    <Compile Include="Assets\Scripts\ThrowFood.cs" />
     <Compile Include="Assets\Scripts\TigerScript.cs" />
     <Compile Include="Assets\Scripts\TriggerDialog.cs" />
     <Compile Include="Assets\Scripts\TurnBasedOnCamera.cs" />
     <Compile Include="Assets\Scripts\VillageCrystalQuest.cs" />
     <Compile Include="Assets\Scripts\WallJump.cs" />
-    <Compile Include="Assets\ThrowFood.cs" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />

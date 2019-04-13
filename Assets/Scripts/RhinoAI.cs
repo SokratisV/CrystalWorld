@@ -65,6 +65,7 @@ public class RhinoAI : MonoBehaviour
         {
             StartCoroutine(KillPlayer());
             collision.gameObject.GetComponent<RhinoKnockback>().TriggerKnockBack();
+            FoodPickup.enableFood = true;
         }
     }
 

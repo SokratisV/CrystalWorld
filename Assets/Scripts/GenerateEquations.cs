@@ -2,8 +2,9 @@
 using TMPro;
 using UnityEngine.UI;
 using System.Collections;
+using System;
 
-public class GenerateQuestions : MonoBehaviour {
+public class GenerateEquations : MonoBehaviour {
 
     public TextMeshProUGUI[] buttons;
     public AudioClip correctSound;
@@ -18,6 +19,7 @@ public class GenerateQuestions : MonoBehaviour {
     public int[] answers;
     private int equationIndex;
     private int correctButtonIndex;
+    private WaitForSecondsRealtime delay;
 
 	private void Start () {
         audioSource = GetComponent<AudioSource>();
@@ -26,6 +28,7 @@ public class GenerateQuestions : MonoBehaviour {
         SetButtonAnswers();
         scoreText = GameObject.FindGameObjectWithTag("ScoreText").GetComponent<TextMeshProUGUI>();
         attemptsText = GameObject.FindGameObjectWithTag("AttemptsText").GetComponent<TextMeshProUGUI>();
+        delay = new WaitForSecondsRealtime(2f);
         CalculatePanelSize();
     }
     public void CheckAnswer(int buttonNumber)
@@ -35,10 +38,12 @@ public class GenerateQuestions : MonoBehaviour {
         {
             audioSource.clip = correctSound;
             IncreaseScore();
+            GetComponentInParent<PlayMiniGame>().WonGame();
         }
         else
         {
             audioSource.clip = incorrectSound;
+            GetComponentInParent<PlayMiniGame>().LostGame();
         }
         audioSource.Play();
         for (int i = 0; i < buttons.Length; i++)
@@ -53,11 +58,11 @@ public class GenerateQuestions : MonoBehaviour {
             }
             buttons[i].GetComponentInParent<Button>().interactable = false;
         }
-        StartCoroutine(GetNewEquation());
+        //StartCoroutine(GetNewEquation());
     }
     private IEnumerator GetNewEquation()
     {
-        yield return new WaitForSeconds(2);
+        yield return delay;
         ResetButtons();
         GetRandomEquationIndex();
         SetButtonAnswers();
@@ -99,7 +104,7 @@ public class GenerateQuestions : MonoBehaviour {
     private void SetButtonAnswers()
     {
         int answer = answers[equationIndex]; //the answer to the equation
-        correctButtonIndex = Random.Range(0, 3); //choose random button to assign correct answer
+        correctButtonIndex = UnityEngine.Random.Range(0, 3); //choose random button to assign correct answer
         int[] answerDeviations = GetDeviations();
         int deviationCounter = 0;
         answerDeviations[0] += answer;
@@ -115,35 +120,15 @@ public class GenerateQuestions : MonoBehaviour {
                 buttons[i].text = "" + answerDeviations[deviationCounter++];
             }
         }
-        //switch (correctButtonIndex)
-        //{
-        //    default:
-        //        break;
-        //    case 0:
-        //        answer1.text = "" + answer;
-        //        answer2.text = "" + answerDeviations[0];
-        //        answer3.text = "" + answerDeviations[1];
-        //        break;
-        //    case 1:
-        //        answer2.text = "" + answer;
-        //        answer1.text = "" + answerDeviations[0];
-        //        answer3.text = "" + answerDeviations[1];
-        //        break;
-        //    case 2:
-        //        answer3.text = "" + answer;
-        //        answer1.text = "" + answerDeviations[0];
-        //        answer2.text = "" + answerDeviations[1];
-        //        break;
-        //}
     }
     private int[] GetDeviations()
     {
         int[] deviations = new int[2];
         int[] numbersToChooseFrom = { -3, -2, -1, 1, 2, 3 };
-        deviations[0] = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Length)];
+        deviations[0] = numbersToChooseFrom[UnityEngine.Random.Range(0, numbersToChooseFrom.Length)];
         while (true)
         {
-            deviations[1] = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Length)];
+            deviations[1] = numbersToChooseFrom[UnityEngine.Random.Range(0, numbersToChooseFrom.Length)];
             if (deviations[1] != deviations[0])
             {
                 break;
@@ -153,7 +138,7 @@ public class GenerateQuestions : MonoBehaviour {
     }
     private void GetRandomEquationIndex()
     {
-        equationIndex = Random.Range(0, expressions.Length);
+        equationIndex = UnityEngine.Random.Range(0, expressions.Length);
     }
     private void SetEquationText()
     {
@@ -164,44 +149,4 @@ public class GenerateQuestions : MonoBehaviour {
         GetComponent<SizeAdjuster>().Width = 550;
         GetComponent<SizeAdjuster>().Height = 500;
     }
-    ////NOT IN USE
-    //private string GetRandomExpression()
-    //{
-    //    string s = "";
-    //    if (expressions.Length > 2)
-    //    {
-    //        int rand = Random.Range(0, expressions.Length - 1);
-    //        foreach (char item in expressions[rand])
-    //        {
-    //            if (item.Equals('N'))
-    //            {
-    //                s += Random.Range(0, 20);
-    //            }
-    //            else if (item.Equals('O'))
-    //            {
-    //                s += GetRandomOperator();
-    //            }
-    //        }
-    //    }
-    //    return s;
-    //}
-    ////NOT IN USE
-    //private string GetRandomOperator()
-    //{
-    //    int ran = Random.Range(0, 4);
-    //    switch (ran)
-    //    {
-    //        case 0:
-    //            return "+";
-
-    //        case 1:
-    //            return "-";
-
-    //        case 2:
-    //            return "*";
-    //        case 3:
-    //            return "/";
-    //    }
-    //    return "ERROR";
-    //}
 }

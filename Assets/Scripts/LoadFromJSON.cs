@@ -71,19 +71,12 @@ public class LoadFromJSON : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.F4)) //highlight the correct answer
             {
-                if (index != 0)
-                {
-                    answers[int.Parse(QuestionsFromJson[index - 1].correctAnswer) - 1].Select();
-                }
-                else
-                {
-                    answers[int.Parse(QuestionsFromJson[QuestionsFromJson.Length - 1].correctAnswer) - 1].Select();
-                }
+                HighlightCorrectAnswer();
             }
-            if (Input.GetKeyDown(KeyCode.F5))
-            {
-                ShowQuestionStatus();
-            }
+            //if (Input.GetKeyDown(KeyCode.F5))
+            //{
+            //    ShowQuestionStatus();
+            //}
         }
         if (isQuestionsUIActive)
         {
@@ -105,6 +98,17 @@ public class LoadFromJSON : MonoBehaviour
             }
         }
 
+    }
+    public void HighlightCorrectAnswer()
+    {
+        if (index != 0)
+        {
+            answers[int.Parse(QuestionsFromJson[index - 1].correctAnswer) - 1].Select();
+        }
+        else
+        {
+            answers[int.Parse(QuestionsFromJson[QuestionsFromJson.Length - 1].correctAnswer) - 1].Select();
+        }
     }
     public void ToggleQuestionMenu()
     {

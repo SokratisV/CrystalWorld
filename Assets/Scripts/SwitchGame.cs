@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine;
 
 public class SwitchGame : MonoBehaviour {
+
     public TextMeshProUGUI[] texts;
     public GameObject[] prefabGames;
     private int whichPrefabIsActive = 0;
@@ -11,7 +12,7 @@ public class SwitchGame : MonoBehaviour {
     public GameObject backgroundOfGames; //previous owner of script, MiniGamesUI--> Background
     public GameObject miniGamesUI;
 
-    private void Awake()
+    private void Start()
     {
         activeMiddlePanel = Instantiate(prefabGames[whichPrefabIsActive], backgroundOfGames.transform);
         activeMiddlePanel.name = prefabGames[whichPrefabIsActive].name;
@@ -21,6 +22,8 @@ public class SwitchGame : MonoBehaviour {
     public void ToggleMiniGames()
     {
         miniGamesUI.SetActive(!miniGamesUI.activeSelf);
+        ChangeGame();
+        GetComponent<GameManagement>().Pause();
     }
     public void ChangeGame()
     {

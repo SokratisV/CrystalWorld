@@ -10,6 +10,7 @@ public class GameProgress : MonoBehaviour
     public GameObject villageCrystal;
     public GameObject mazeCrystal;
     public GameObject animalCrystal;
+    public PlayerSettings settings;
 
     private void Start()
     {

@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class PopulateGrid : MonoBehaviour {
+public class RememberSquares : MonoBehaviour {
 
     public GameObject prefab;
     public Sprite revealeadCorrectImage;
@@ -16,6 +16,7 @@ public class PopulateGrid : MonoBehaviour {
     private float countDownTimer = 3f;
     public TextMeshProUGUI countDownText;
     private IEnumerator currentCoroutine;
+    private WaitForSecondsRealtime delay;
 
     void Start () {
         MemoryClass.revealedCorrectSprite = revealeadCorrectImage;
@@ -31,6 +32,7 @@ public class PopulateGrid : MonoBehaviour {
             countDownText = GameObject.FindWithTag("CountDown").GetComponent<TextMeshProUGUI>();
         }
         GetComponentInChildren<MemoryClass>().ResetScoreAndAttempts();
+        delay = new WaitForSecondsRealtime(1f);
         CalculatePanelSize();
     }
     private void Populate()
@@ -51,29 +53,6 @@ public class PopulateGrid : MonoBehaviour {
         currentCoroutine = ShowCorrect();
         StartCoroutine(currentCoroutine);
     }
-    //public void Repopulate()
-    //{
-    //    Debug.Log("REPOP");
-    //    RandomizeArray();
-    //    countDownTimer = 3;
-    //    Transform temp;
-
-    //    for (int i = 0; i < length; i++)
-    //    {
-    //        temp = transform.GetChild(i);
-    //        temp.GetChild(0).GetComponent<Image>().sprite = hiddenImage;
-    //        if (gamePattern[i] < MemoryClass.howManyCorrectCards)
-    //        {
-    //            temp.GetComponentInChildren<MemoryClass>().amIActive = true;
-    //        }
-    //        else
-    //        {
-    //            temp.GetComponentInChildren<MemoryClass>().amIActive = false;
-    //        }
-    //        temp.GetComponentInChildren<Button>().interactable = false;
-    //    }
-    //    StartCoroutine(ShowCorrect());
-    //}
     private void RandomizeArray()
     {
         int temp;
@@ -83,7 +62,7 @@ public class PopulateGrid : MonoBehaviour {
         }
         for (int i = 0; i < length; i++)
         {
-            int rnd = Random.Range(0, length);
+            int rnd = UnityEngine.Random.Range(0, length);
             temp = gamePattern[rnd];
             gamePattern[rnd] = gamePattern[i];
             gamePattern[i] = temp;
@@ -98,11 +77,11 @@ public class PopulateGrid : MonoBehaviour {
         }
 
         countDownText.text = "" + countDownTimer--;
-        yield return new WaitForSeconds(1);
+        yield return delay;
         countDownText.text = "" + countDownTimer--;
-        yield return new WaitForSeconds(1);
+        yield return delay;
         countDownText.text = "" + countDownTimer--;
-        yield return new WaitForSeconds(1);
+        yield return delay;
         countDownText.text = "" + countDownTimer;
         
         for (int i = 0; i < length; i++)
@@ -110,10 +89,10 @@ public class PopulateGrid : MonoBehaviour {
             if (gamePattern[i] < MemoryClass.howManyCorrectCards)
             {
                 transform.GetChild(i).GetChild(0).GetComponent<Image>().sprite = revealeadCorrectImage;
-                yield return new WaitForSeconds(revealSpeed);
+                yield return new WaitForSecondsRealtime(revealSpeed);
             }
         }
-        yield return new WaitForSeconds(revealedTime);
+        yield return new WaitForSecondsRealtime(revealedTime);
         countDownText.text = "Go!";
 
         for (int i = 0; i < length; i++)
@@ -125,12 +104,8 @@ public class PopulateGrid : MonoBehaviour {
             }
             temp.GetComponentInChildren<Button>().interactable = true;
         }
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSecondsRealtime(.5f);
         countDownText.text = "";
-    }
-    public void ExitGame()
-    {
-        Application.Quit();
     }
     public void RestartGame()
     {
@@ -153,7 +128,8 @@ public class PopulateGrid : MonoBehaviour {
             temp.GetComponentInChildren<Button>().interactable = false;
         }
         currentCoroutine = ShowCorrect();
-        StartCoroutine(currentCoroutine); 
+        StartCoroutine(currentCoroutine);
+        GetComponentInParent<PlayMiniGame>().LostGame();
     }
     private void StopTheCoroutine()
     {
@@ -171,5 +147,9 @@ public class PopulateGrid : MonoBehaviour {
         float tempHeight = middlePanelHeight + upperPanelHeight + lowerPanelHeight;
         GetComponent<SizeAdjuster>().Height = tempHeight;
         GetComponent<SizeAdjuster>().Width = middlePanelWidth;
+    }
+    public void WonGame()
+    {
+        GetComponentInParent<PlayMiniGame>().WonGame();
     }
 }

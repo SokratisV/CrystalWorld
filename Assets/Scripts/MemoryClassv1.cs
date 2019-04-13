@@ -21,6 +21,8 @@ public class MemoryClassv1 : MonoBehaviour{
     private TextMeshProUGUI scoreText;
     private TextMeshProUGUI attemptsText;
     private static bool allowScoreChanges;
+    private WaitForSecondsRealtime delay;
+    private static FindPairs findPairs;
 
     private void Start()
     {
@@ -35,6 +37,11 @@ public class MemoryClassv1 : MonoBehaviour{
         openCardsIndex = 0;
         allowScoreChanges = true;
         counter = 0;
+        delay = new WaitForSecondsRealtime(1f);
+        if (findPairs == null)
+        {
+            findPairs = GetComponentInParent<FindPairs>();
+        }
     }
     public void ToggleBetweenSprites()
     {
@@ -94,7 +101,7 @@ public class MemoryClassv1 : MonoBehaviour{
     }
     private IEnumerator CloseOpenCards()
     {
-        yield return new WaitForSeconds(1);
+        yield return delay;
         counter = 0;
         if (allowScoreChanges)
         {
@@ -167,9 +174,10 @@ public class MemoryClassv1 : MonoBehaviour{
     }
     private IEnumerator WonTheGame()
     {
-        yield return new WaitForSeconds(1);
+        yield return delay;
         audio.clip = victorySound;
         audio.Play();
+        findPairs.WonGame();
     }
     public void ResetThisCard()
     {
@@ -180,7 +188,7 @@ public class MemoryClassv1 : MonoBehaviour{
     private IEnumerator IdleTime()
     {
         allowScoreChanges = false;
-        yield return new WaitForSeconds(1);
+        yield return delay;
         allowScoreChanges = true;
     }
 }

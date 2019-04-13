@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -35,9 +36,9 @@ public class PopulateGridWord : MonoBehaviour {
         {
             foreach (char c in Input.inputString)
             {
+                print(c);
                 if (c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z')
                 {
-                    //CheckForLetterInWord(c);
                     foreach (TextMeshProUGUI item in alphabetPanel.GetComponentsInChildren<TextMeshProUGUI>())
                     {
                         if (item.text.Equals(c.ToString().ToUpper()))
@@ -48,11 +49,8 @@ public class PopulateGridWord : MonoBehaviour {
                 }
             }
         }
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Restart();
-        }
     }
+
     private void Start()
     {
         audio = GetComponent<AudioSource>();
@@ -78,7 +76,7 @@ public class PopulateGridWord : MonoBehaviour {
     }
     private void GetRandomWord()
     {
-        indexOfWord = Random.Range(0, words.Length);
+        indexOfWord = UnityEngine.Random.Range(0, words.Length);
         howManyLetters = 0;
     }
     private void PopulateWordPanel()
@@ -139,6 +137,10 @@ public class PopulateGridWord : MonoBehaviour {
         {
             audio.clip = incorrectSound;
             IncreaseAttemptsCount();
+            if (numberOfAttempts >= howManyLetters * 0.6)
+            {
+                GetComponentInParent<PlayMiniGame>().LostGame();
+            }
         }
         audio.Play();
         DeactivateLetter(letter.ToString(), correct);
@@ -212,8 +214,9 @@ public class PopulateGridWord : MonoBehaviour {
         stopInput = true;
         audio.clip = victory;
         audio.Play();
-        yield return new WaitForSeconds(2);
-        Restart();
+        yield return new WaitForSecondsRealtime(2);
+        //Restart();
+        GetComponentInParent<PlayMiniGame>().WonGame();
         stopInput = false;
     }
     public void IncreaseScore()
@@ -241,5 +244,4 @@ public class PopulateGridWord : MonoBehaviour {
         ResetScore();
         ResetAttempts();
     }
-
 }

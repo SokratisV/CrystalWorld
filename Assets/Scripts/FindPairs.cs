@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class PopulateGridv1 : MonoBehaviour {
+public class FindPairs : MonoBehaviour {
 
     public GameObject prefab;
     public int numberOfGridCells;
@@ -43,6 +43,10 @@ public class PopulateGridv1 : MonoBehaviour {
             item.ResetThisCard();
         }
     }
+    public void WonGame()
+    {
+        GetComponentInParent<PlayMiniGame>().WonGame();
+    }
     private void ArrangeArray()
     {
         //Add every sprite twice
@@ -55,14 +59,10 @@ public class PopulateGridv1 : MonoBehaviour {
         for (int t = 0; t < spriteArray.Length; t++)
         {
             Sprite tmp = spriteArray[t];
-            int r = Random.Range(t, spriteArray.Length);
+            int r = UnityEngine.Random.Range(t, spriteArray.Length);
             spriteArray[t] = spriteArray[r];
             spriteArray[r] = tmp;
         }
-    }
-    public void QuitGame()
-    {
-        Application.Quit();
     }
     private void CalculatePanelSize()
     {

@@ -10,7 +10,7 @@ public class MemoryClass : MonoBehaviour {
     public static Sprite hiddenSprite;
     public static Sprite revealedCorrectSprite;
     private GameObject containerPanel;
-    private static PopulateGrid populateScript;
+    private static RememberSquares rememberSquares;
     public static int howManyCorrectCards = 4;
     private static int correctCounter = 0;
     public static int score;
@@ -27,9 +27,9 @@ public class MemoryClass : MonoBehaviour {
         attemptsText = GameObject.FindGameObjectWithTag("AttemptsText").GetComponent<TextMeshProUGUI>();
         scoreText = GameObject.FindGameObjectWithTag("ScoreText").GetComponent<TextMeshProUGUI>();
         containerPanel = GameObject.FindGameObjectWithTag("PanelContainer");
-        if (populateScript == null)
+        if (rememberSquares == null)
         {
-            populateScript = GetComponentInParent<PopulateGrid>();
+            rememberSquares = GetComponentInParent<RememberSquares>();
         }
         audio = GetComponent<AudioSource>();
     }
@@ -74,8 +74,8 @@ public class MemoryClass : MonoBehaviour {
     private IEnumerator RestartGame()
     {
         correctCounter = 0;
-        yield return new WaitForSeconds(2);
-        populateScript.RestartGame();
+        yield return new WaitForSecondsRealtime(2);
+        rememberSquares.RestartGame();
     }
     private void WonRound()
     {
@@ -89,7 +89,8 @@ public class MemoryClass : MonoBehaviour {
             temp = containerPanel.transform.GetChild(i);
             temp.GetComponentInChildren<Button>().interactable = false;
         }
-        StartCoroutine(RestartGame());
+        //StartCoroutine(RestartGame());
+        rememberSquares.WonGame();
     }
     public void ResetScoreAndAttempts()
     {
@@ -123,7 +124,7 @@ public class MemoryClass : MonoBehaviour {
     private IEnumerator IdleTime()
     {
         allowScoreChanges = false;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSecondsRealtime(1);
         allowScoreChanges = true;
     }
     private void IncreaseAttempts()
