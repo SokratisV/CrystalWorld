@@ -21,9 +21,17 @@ public class SwitchGame : MonoBehaviour {
     }
     public void ToggleMiniGames()
     {
-        miniGamesUI.SetActive(!miniGamesUI.activeSelf);
-        ChangeGame();
-        GetComponent<GameManagement>().Pause();
+        if (miniGamesUI.activeSelf)
+        {
+            miniGamesUI.SetActive(false);
+            GetComponent<GameManagement>().Pause();
+        }
+        else
+        {
+            ChangeGame();
+            miniGamesUI.SetActive(true);
+            GetComponent<GameManagement>().Pause();
+        }
     }
     public void ChangeGame()
     {

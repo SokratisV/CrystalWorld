@@ -98,7 +98,6 @@
     <Compile Include="Assets\Scripts\MuteSounds.cs" />
     <Compile Include="Assets\Scripts\NPCDialog.cs" />
     <Compile Include="Assets\Scripts\OnMouseOver.cs" />
-    <Compile Include="Assets\Scripts\PlayerOptions.cs" />
     <Compile Include="Assets\Scripts\PlayerSettings.cs" />
     <Compile Include="Assets\Scripts\PlayMiniGame.cs" />
     <Compile Include="Assets\Scripts\PopulateGridWord.cs" />

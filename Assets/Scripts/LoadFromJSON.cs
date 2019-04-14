@@ -184,6 +184,7 @@ public class LoadFromJSON : MonoBehaviour
             //    lastQuestionAreaTrigger.SetActive(false);
             //}
             StartCoroutine(VisualFeedBackBeforeClosing(buttonNumber, true));
+            GetComponent<PlayMiniGame>().CorrectQuestion();
         }
         else
         {
@@ -194,8 +195,8 @@ public class LoadFromJSON : MonoBehaviour
             }
             answeredQuestions[temp] = 0;
             StartCoroutine(VisualFeedBackBeforeClosing(buttonNumber, false));
+            GetComponent<PlayMiniGame>().IncorrectQuestion();
         }
-
     }
     private void GoToNextIndex()
     {

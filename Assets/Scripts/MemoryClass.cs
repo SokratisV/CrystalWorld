@@ -18,7 +18,7 @@ public class MemoryClass : MonoBehaviour {
     private TextMeshProUGUI attemptsText;
     private TextMeshProUGUI scoreText;
     private static bool allowScoreChanges = true;
-    private new AudioSource audio;
+    private AudioSource audio;
     public AudioClip correctSound;
     public AudioClip incorrectSound;
 
@@ -31,7 +31,7 @@ public class MemoryClass : MonoBehaviour {
         {
             rememberSquares = GetComponentInParent<RememberSquares>();
         }
-        audio = GetComponent<AudioSource>();
+        audio = GetComponentInParent<AudioSource>();
     }
     public void RevealCard()
     {

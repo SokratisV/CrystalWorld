@@ -14,6 +14,7 @@ public class GameManagement : MonoBehaviour
     public PostProcessProfile profile;
     public GameObject shipMenuUI;
     public GameObject controlsPanel;
+    public PlayerSettings settings;
 
     [SerializeField]
     private bool isPaused = false;
@@ -170,9 +171,9 @@ public class GameManagement : MonoBehaviour
     {
         GetComponent<SwitchGame>().ToggleMiniGames();
     }
-    public void SaveSliderValue()
+    public void SaveSliderValue(float value)
     {
-        PlayerOptions.EducationalSlider = (int)educationalSlider.value;
+        settings.edutainmentLevel = (int)value;
     }
     public void ControlVSync(bool value)
     {

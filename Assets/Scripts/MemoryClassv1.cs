@@ -175,8 +175,8 @@ public class MemoryClassv1 : MonoBehaviour{
     private IEnumerator WonTheGame()
     {
         yield return delay;
-        audio.clip = victorySound;
-        audio.Play();
+        //audio.clip = victorySound;
+        //audio.Play();
         findPairs.WonGame();
     }
     public void ResetThisCard()

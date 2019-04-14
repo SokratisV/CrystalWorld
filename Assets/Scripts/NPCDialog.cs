@@ -91,6 +91,9 @@ public class NPCDialog : MonoBehaviour
                 dialogText.text = AnimalQuestCompleted;
                 break;
             case 5:
+                dialogText.text = DefaultText;
+                break;
+            case 6:
                 dialogText.text = WinGame;
                 break;
             default:

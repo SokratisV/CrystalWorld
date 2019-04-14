@@ -14,6 +14,7 @@ public class TeleportToSpawn : MonoBehaviour
     private void Start()
     {
         SetLastSpawn(0);
+        RespawnDebug();
     }
     private void Teleport(Transform point)
     {
@@ -30,7 +31,9 @@ public class TeleportToSpawn : MonoBehaviour
     }
     private void RespawnDebug()
     {
-        transform.position = lastSpawnPoint.position;
+        player.transform.position = lastSpawnPoint.position;
+        cinemachineVCam.SetActive(false);
+        cinemachineVCam.SetActive(true);
     }
     public void DeathRespawn()
     {

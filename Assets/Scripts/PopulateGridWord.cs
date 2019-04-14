@@ -212,9 +212,9 @@ public class PopulateGridWord : MonoBehaviour {
     private IEnumerator Win()
     {
         stopInput = true;
-        audio.clip = victory;
-        audio.Play();
-        yield return new WaitForSecondsRealtime(2);
+        //audio.clip = victory;
+        //audio.Play();
+        yield return new WaitForSecondsRealtime(1);
         //Restart();
         GetComponentInParent<PlayMiniGame>().WonGame();
         stopInput = false;
