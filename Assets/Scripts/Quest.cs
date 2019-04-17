@@ -11,7 +11,6 @@ public abstract class Quest : MonoBehaviour
 
     protected void QuestCompleted()
     {
-        print("quest complete, level " + settings.edutainmentLevel);
         OnQuestComplete?.Invoke(this, EventArgs.Empty);
         if (questCompletedSound != null)
         {
@@ -24,7 +23,7 @@ public abstract class Quest : MonoBehaviour
         }
         if (settings.edutainmentLevel == 2)
         {
-            gameManager.GetComponent<GameManagement>().ToggleQuestions();
+            //gameManager.GetComponent<GameManagement>().ToggleQuestions();
         }
     }
 

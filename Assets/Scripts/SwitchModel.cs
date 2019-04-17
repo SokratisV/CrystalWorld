@@ -13,7 +13,6 @@ public class SwitchModel : MonoBehaviour
     {
         ChooseModel(playerSettings.character);
     }
-    
     public void ChangeModel()
     {
         if (playerObject.transform.childCount > 0)
@@ -24,13 +23,11 @@ public class SwitchModel : MonoBehaviour
         playerObject.GetComponent<Animator>().avatar = avatars[index];
         AdvanceIndex();
     }
-
     public void ChooseModel(int number)
     {
-        tempModel = Instantiate(models[index], playerObject.transform);
-        playerObject.GetComponent<Animator>().avatar = avatars[index];
+        tempModel = Instantiate(models[number], playerObject.transform);
+        playerObject.GetComponent<Animator>().avatar = avatars[number];
     }
-
     private void AdvanceIndex()
     {
         if (index + 1 == models.Length)

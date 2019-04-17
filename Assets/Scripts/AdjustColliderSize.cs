@@ -14,7 +14,7 @@ public class AdjustColliderSize : MonoBehaviour
 
     void Update()
     {
-        collider.height += Time.deltaTime * 1.4f;
+        collider.height += Time.deltaTime * 1.3f;
         if (collider.height >= initialHeight)
         {
             collider.height = initialHeight;

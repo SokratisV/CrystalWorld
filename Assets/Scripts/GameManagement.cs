@@ -18,12 +18,12 @@ public class GameManagement : MonoBehaviour
 
     [SerializeField]
     private bool isPaused = false;
-    private bool settingsActive = false;
     private Moving movementScript;
     private Climbing climbingScript;
     private Cinemachine.CinemachineFreeLook cinemachineScript;
     private Animator controlsPanelAnimator;
     private bool minigameQuestionSwitch = false;
+    private bool questionsActive = false, miniGamesActive = false, escMenuActive = false, settingsActive = false, shipMenuActive = false;
 
     private void Start()
     {
@@ -41,25 +41,29 @@ public class GameManagement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (isPaused)
+            if (!miniGamesActive && !questionsActive && !shipMenuActive)
             {
-                EscapeMenuPause();
-            }
-            else
-            {
-                if (settingsActive)
-                {
-                    Settings();
-                }
-                else
+                if (!settingsActive)
                 {
                     EscapeMenuPause();
                 }
+                else
+                {
+                    Settings();
+                }
             }
-        }
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            GetComponent<SwitchModel>().ChangeModel();
+            else if (miniGamesActive)
+            {
+                ToggleMiniGames();
+            }
+            else if (questionsActive)
+            {
+                ToggleQuestions();
+            }
+            else if (shipMenuActive)
+            {
+                ActivateTeleportMenu();
+            }
         }
         if (Input.GetKeyDown(KeyCode.F2))
         {
@@ -69,18 +73,23 @@ public class GameManagement : MonoBehaviour
         {
             ActivateTeleportMenu();
         }
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            controlsPanelAnimator.SetTrigger("Enable");
-        }
-        if (Input.GetKeyDown(KeyCode.Mouse1))
-        {
-            controlsPanelAnimator.SetTrigger("Disable");
-        }
-        if (Input.GetKeyDown(KeyCode.F5))
+        if (Input.GetKeyDown(KeyCode.F3))
         {
             ToggleMiniGames();
         }
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            controlsPanelAnimator.SetTrigger("Enable");
+        }
+        if (Input.GetKeyUp(KeyCode.Tab))
+        {
+            controlsPanelAnimator.SetTrigger("Disable");
+        }
+        //if (Input.GetKeyDown(KeyCode.Tab))
+        //{
+        //    GetComponent<SwitchModel>().ChangeModel();
+        //}
+
     }
     /*
      * Pauses and unpauses game.
@@ -111,6 +120,7 @@ public class GameManagement : MonoBehaviour
             movementScript.allowMovement = true;
             climbingScript.allowClimbing = true;
             Time.timeScale = 1;
+            escMenuActive = false;
         }
         else
         {
@@ -119,6 +129,7 @@ public class GameManagement : MonoBehaviour
             movementScript.allowMovement = false;
             climbingScript.allowClimbing = false;
             Time.timeScale = 0;
+            escMenuActive = true;
         }
     }
     public void Settings()
@@ -145,7 +156,8 @@ public class GameManagement : MonoBehaviour
     public void ActivateTeleportMenu()
     {
         Pause();
-        shipMenuUI.SetActive(true);
+        shipMenuActive = !shipMenuActive;
+        shipMenuUI.SetActive(shipMenuActive);
     }
     public void ChangeFOV(float value)
     {
@@ -166,10 +178,12 @@ public class GameManagement : MonoBehaviour
     public void ToggleQuestions()
     {
         GetComponent<LoadFromJSON>().ToggleQuestionMenu();
+        questionsActive = !questionsActive;
     }
     public void ToggleMiniGames()
     {
         GetComponent<SwitchGame>().ToggleMiniGames();
+        miniGamesActive = !miniGamesActive;
     }
     public void SaveSliderValue(float value)
     {

@@ -4,7 +4,7 @@ public class TurnBasedOnCamera : MonoBehaviour {
 
     public GameObject objectToFollow;
     private Vector3 transformToFollow;
-    public bool x, y, z;
+    //public bool x, y, z;
 
 	void Start () {
 	    if (objectToFollow == null)

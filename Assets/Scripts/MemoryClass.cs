@@ -25,7 +25,7 @@ public class MemoryClass : MonoBehaviour {
     private void Start()
     {
         attemptsText = GameObject.FindGameObjectWithTag("AttemptsText").GetComponent<TextMeshProUGUI>();
-        scoreText = GameObject.FindGameObjectWithTag("ScoreText").GetComponent<TextMeshProUGUI>();
+        //scoreText = GameObject.FindGameObjectWithTag("ScoreText").GetComponent<TextMeshProUGUI>();
         containerPanel = GameObject.FindGameObjectWithTag("PanelContainer");
         if (rememberSquares == null)
         {
@@ -79,7 +79,7 @@ public class MemoryClass : MonoBehaviour {
     }
     private void WonRound()
     {
-        IncreaseScore();
+        //IncreaseScore();
         IncreaseAttempts();
         audio.clip = correctSound;
         audio.Play();
@@ -94,7 +94,7 @@ public class MemoryClass : MonoBehaviour {
     }
     public void ResetScoreAndAttempts()
     {
-        ResetScore();
+        //ResetScore();
         ResetAttempts();
         StartCoroutine(IdleTime());
     }

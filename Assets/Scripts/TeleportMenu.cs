@@ -13,4 +13,13 @@ public class TeleportMenu : MonoBehaviour
             shipMenuUI.SetActive(true);
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            print("playing");
+            GetComponent<AudioSource>().Play();
+        }
+    }
 }

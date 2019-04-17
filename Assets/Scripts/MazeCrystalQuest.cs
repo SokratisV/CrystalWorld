@@ -23,9 +23,12 @@ public class MazeCrystalQuest : Quest
             crystal.SetActive(false);
             if (piecesCollected >= 7)
             {
-                background.GetComponent<PlayMiniGame>().OnQuestionAnswer += MazeCrystalQuest_OnQuestionAnswer;
-                amISubscribed = true;
-                gameManager.GetComponent<GameManagement>().ToggleMiniGames();
+                if (!amISubscribed)
+                {
+                    background.GetComponent<PlayMiniGame>().OnQuestionAnswer += MazeCrystalQuest_OnQuestionAnswer;
+                    amISubscribed = true;
+                    gameManager.GetComponent<GameManagement>().ToggleQuestions();
+                }
             }
             else
             {

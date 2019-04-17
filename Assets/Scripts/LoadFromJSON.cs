@@ -65,14 +65,14 @@ public class LoadFromJSON : MonoBehaviour
     {
         if (questionsUICanvas.activeSelf)
         {
-            if (Input.GetKeyDown(KeyCode.F3))
-            {
-                GetNextQuestion();
-            }
-            if (Input.GetKeyDown(KeyCode.F4)) //highlight the correct answer
-            {
-                HighlightCorrectAnswer();
-            }
+            //if (Input.GetKeyDown(KeyCode.F3))
+            //{
+            //    GetNextQuestion();
+            //}
+            //if (Input.GetKeyDown(KeyCode.F4)) //highlight the correct answer
+            //{
+            //    HighlightCorrectAnswer();
+            //}
             //if (Input.GetKeyDown(KeyCode.F5))
             //{
             //    ShowQuestionStatus();

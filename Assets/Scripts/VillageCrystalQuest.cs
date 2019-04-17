@@ -10,7 +10,6 @@ public class VillageCrystalQuest : Quest
     public override void QuestProgress(GameObject crystal)
     {
         piecesCollected += 1;
-        print(piecesCollected);
         crystal.SetActive(false);
 
         if (settings.edutainmentLevel == 0)
@@ -41,6 +40,7 @@ public class VillageCrystalQuest : Quest
                 {
                     background.GetComponent<PlayMiniGame>().OnQuestionAnswer += VillageCrystalQuest_OnQuestionAnswer;
                     amISubscribed = true;
+                    gameManager.GetComponent<GameManagement>().ToggleQuestions();
                 }
             }
             else

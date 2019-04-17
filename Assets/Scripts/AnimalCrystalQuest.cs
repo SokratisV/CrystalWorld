@@ -23,8 +23,12 @@ public class AnimalCrystalQuest : Quest
             crystal.SetActive(false);
             if (piecesCollected >= 7)
             {
-                background.GetComponent<PlayMiniGame>().OnQuestionAnswer += AnimalCrystalQuest_OnQuestionAnswer; ;
-                amISubscribed = true;
+                if (!amISubscribed)
+                {
+                    background.GetComponent<PlayMiniGame>().OnQuestionAnswer += AnimalCrystalQuest_OnQuestionAnswer; ;
+                    amISubscribed = true;
+                    gameManager.GetComponent<GameManagement>().ToggleQuestions();
+                }
             }
             else
             {

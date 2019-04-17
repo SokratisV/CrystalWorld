@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Imported\Standard Assets\Utility\FPSCounter.cs" />
+    <Compile Include="Assets\Rotate.cs" />
     <Compile Include="Assets\Scripts\AdjustCellSize.cs" />
     <Compile Include="Assets\Scripts\AdjustCharacterHeight.cs" />
     <Compile Include="Assets\Scripts\AdjustCollider.cs" />
@@ -112,6 +113,7 @@
     <Compile Include="Assets\Scripts\RhinoSleep.cs" />
     <Compile Include="Assets\Scripts\SizeAdjuster.cs" />
     <Compile Include="Assets\Scripts\Slope.cs" />
+    <Compile Include="Assets\Scripts\StartOfGameWave.cs" />
     <Compile Include="Assets\Scripts\SwitchGame.cs" />
     <Compile Include="Assets\Scripts\SwitchModel.cs" />
     <Compile Include="Assets\Scripts\TeleportMenu.cs" />
@@ -123,6 +125,7 @@
     <Compile Include="Assets\Scripts\TurnBasedOnCamera.cs" />
     <Compile Include="Assets\Scripts\VillageCrystalQuest.cs" />
     <Compile Include="Assets\Scripts\WallJump.cs" />
+    <Compile Include="Assets\ShowModel.cs" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />

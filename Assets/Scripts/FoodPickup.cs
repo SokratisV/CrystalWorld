@@ -6,6 +6,7 @@ public class FoodPickup : MonoBehaviour
     public GameObject gameManager;
     public AudioClip pickupSound;
     public static bool enableFood = false;
+    public GameObject throwFoodUI;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -19,6 +20,7 @@ public class FoodPickup : MonoBehaviour
                 collision.gameObject.GetComponent<ThrowFood>().enabled = true;
                 enableFood = false;
                 collision.gameObject.GetComponent<ThrowFood>().enabled = true;
+                throwFoodUI.SetActive(true);
             }
         }
     }

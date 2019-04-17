@@ -10,6 +10,8 @@ public class TriggerDialog : MonoBehaviour
         if (collision.transform.tag == "Player")
         {
             gameManager.GetComponent<NPCDialog>().ShowDefaultDialog();
+            GetComponentInChildren<Animator>().SetTrigger("Talking");
+            collision.gameObject.GetComponent<Animator>().SetTrigger("Wave");
         }
         if (oldManUI.activeSelf)
         {
