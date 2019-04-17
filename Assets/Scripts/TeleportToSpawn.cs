@@ -43,7 +43,7 @@ public class TeleportToSpawn : MonoBehaviour
     public void Respawn(int point)
     {
         Teleport(spawnPoints.GetChild(point));
-        GetComponent<GameManagement>().Pause();
+        GetComponent<GameManagement>().ToggleShipUI();
         StartCoroutine(TurnOffMenu());
     }
     private IEnumerator TurnOffMenu()

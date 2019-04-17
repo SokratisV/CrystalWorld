@@ -179,10 +179,6 @@ public class LoadFromJSON : MonoBehaviour
             //Gameplay.AddToScore(int.Parse(QuestionsFromJson[temp].points));
             //score.text = "" + Gameplay.GetScore();
             answeredQuestions[temp] = 1;
-            //if (lastQuestionAreaTrigger != null)
-            //{
-            //    lastQuestionAreaTrigger.SetActive(false);
-            //}
             StartCoroutine(VisualFeedBackBeforeClosing(buttonNumber, true));
             GetComponent<PlayMiniGame>().CorrectQuestion();
         }
@@ -258,7 +254,7 @@ public class LoadFromJSON : MonoBehaviour
             b.interactable = false;
         }
         yield return new WaitForSecondsRealtime(1.5f);
-        ToggleQuestionMenu();
+        //ToggleQuestionMenu();
         foreach (Button b in answers)
         {
             b.interactable = true;

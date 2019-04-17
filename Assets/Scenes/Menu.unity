@@ -417,7 +417,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 224064846}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1
@@ -3261,6 +3261,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2048277022}
   - component: {fileID: 2048277023}
+  - component: {fileID: 2048277024}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -3333,7 +3334,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 2
   m_WholeNumbers: 1
-  m_Value: 0
+  m_Value: 2
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -3350,6 +3351,19 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &2048277024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048277021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edf34b604241ea047ba983f7d6bbd6ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settings: {fileID: 11400000, guid: c2db15a8171d7e04daf8607c6248bf6d, type: 2}
 --- !u!1001 &1229623925310408838
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3612,61 +3626,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Terrain
       objectReference: {fileID: 0}
-    - target: {fileID: 6683142574332992318, guid: 667790bdb6b78bb499741d0b90ebe6a7,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6683142574332992318, guid: 667790bdb6b78bb499741d0b90ebe6a7,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6683142574332992318, guid: 667790bdb6b78bb499741d0b90ebe6a7,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6683142574332992318, guid: 667790bdb6b78bb499741d0b90ebe6a7,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6683142574332992318, guid: 667790bdb6b78bb499741d0b90ebe6a7,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6683142574332992318, guid: 667790bdb6b78bb499741d0b90ebe6a7,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6683142574332992318, guid: 667790bdb6b78bb499741d0b90ebe6a7,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6683142574332992318, guid: 667790bdb6b78bb499741d0b90ebe6a7,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6683142574332992318, guid: 667790bdb6b78bb499741d0b90ebe6a7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6683142574332992318, guid: 667790bdb6b78bb499741d0b90ebe6a7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6683142574332992318, guid: 667790bdb6b78bb499741d0b90ebe6a7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6683142574332992319, guid: 667790bdb6b78bb499741d0b90ebe6a7,
         type: 3}
       propertyPath: m_DetailObjectDistance
@@ -3725,6 +3684,61 @@ PrefabInstance:
     - target: {fileID: 6683142574332992319, guid: 667790bdb6b78bb499741d0b90ebe6a7,
         type: 3}
       propertyPath: m_MaterialType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6683142574332992318, guid: 667790bdb6b78bb499741d0b90ebe6a7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6683142574332992318, guid: 667790bdb6b78bb499741d0b90ebe6a7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6683142574332992318, guid: 667790bdb6b78bb499741d0b90ebe6a7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6683142574332992318, guid: 667790bdb6b78bb499741d0b90ebe6a7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6683142574332992318, guid: 667790bdb6b78bb499741d0b90ebe6a7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6683142574332992318, guid: 667790bdb6b78bb499741d0b90ebe6a7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6683142574332992318, guid: 667790bdb6b78bb499741d0b90ebe6a7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6683142574332992318, guid: 667790bdb6b78bb499741d0b90ebe6a7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6683142574332992318, guid: 667790bdb6b78bb499741d0b90ebe6a7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6683142574332992318, guid: 667790bdb6b78bb499741d0b90ebe6a7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6683142574332992318, guid: 667790bdb6b78bb499741d0b90ebe6a7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 168322115939346884, guid: 667790bdb6b78bb499741d0b90ebe6a7,

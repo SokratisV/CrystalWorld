@@ -18,7 +18,6 @@ public class TeleportMenu : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            print("playing");
             GetComponent<AudioSource>().Play();
         }
     }

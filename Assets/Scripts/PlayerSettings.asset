@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dedfec01b8db0042b7f4b048d6ffbd5, type: 3}
   m_Name: PlayerSettings
   m_EditorClassIdentifier: 
-  edutainmentLevel: 1
-  character: 0
+  edutainmentLevel: 0
+  character: 1
   crystalsObtained: 

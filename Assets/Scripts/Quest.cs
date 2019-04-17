@@ -8,6 +8,7 @@ public abstract class Quest : MonoBehaviour
     public GameObject gameManager;
     public AudioClip questCompletedSound;
     public PlayerSettings settings;
+    public GameObject background;
 
     protected void QuestCompleted()
     {
@@ -16,14 +17,6 @@ public abstract class Quest : MonoBehaviour
         {
             gameManager.GetComponents<AudioSource>()[1].clip = questCompletedSound;
             gameManager.GetComponents<AudioSource>()[1].Play();
-        }
-        if (settings.edutainmentLevel == 1)
-        {
-            //gameManager.GetComponent<GameManagement>().ToggleMiniGames();
-        }
-        if (settings.edutainmentLevel == 2)
-        {
-            //gameManager.GetComponent<GameManagement>().ToggleQuestions();
         }
     }
 

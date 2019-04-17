@@ -3,9 +3,6 @@
 public class VillageCrystalQuest : Quest
 {
     public int piecesCollected = 0;
-    public GameObject background;
-
-    private static bool amISubscribed = false;
 
     public override void QuestProgress(GameObject crystal)
     {
@@ -23,31 +20,21 @@ public class VillageCrystalQuest : Quest
         {
             if (piecesCollected >= 7)
             {
-                if (!amISubscribed)
-                {
-                    background.GetComponent<PlayMiniGame>().OnMiniGameWin += MazeCrystalQuest_OnMiniGameWin;
-                    amISubscribed = true;
-                }
+                background.GetComponent<PlayMiniGame>().OnMiniGameWin += VillageCrystalQuest_OnMiniGameWin;
                 gameManager.GetComponent<GameManagement>().ToggleMiniGames();
             }
-            crystal.SetActive(false);
         }
         else if (settings.edutainmentLevel == 2)
         {
             if (piecesCollected >= 7)
             {
-                if (!amISubscribed)
-                {
-                    background.GetComponent<PlayMiniGame>().OnQuestionAnswer += VillageCrystalQuest_OnQuestionAnswer;
-                    amISubscribed = true;
-                    gameManager.GetComponent<GameManagement>().ToggleQuestions();
-                }
+                gameManager.GetComponent<PlayMiniGame>().OnQuestionAnswer += VillageCrystalQuest_OnQuestionAnswer;
+                gameManager.GetComponent<GameManagement>().ToggleQuestions();
             }
             else
             {
                 //toggle information UI
             }
-            crystal.SetActive(false);
         }
     }
 
@@ -56,8 +43,10 @@ public class VillageCrystalQuest : Quest
         QuestCompleted();
     }
 
-    private void MazeCrystalQuest_OnMiniGameWin(object sender, System.EventArgs e)
+    private void VillageCrystalQuest_OnMiniGameWin(object sender, System.EventArgs e)
     {
+        print(sender);
         QuestCompleted();
     }
+
 }

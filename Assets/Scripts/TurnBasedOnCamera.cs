@@ -4,12 +4,11 @@ public class TurnBasedOnCamera : MonoBehaviour {
 
     public GameObject objectToFollow;
     private Vector3 transformToFollow;
-    //public bool x, y, z;
 
 	void Start () {
 	    if (objectToFollow == null)
         {
-            objectToFollow = GameObject.FindWithTag("Player");
+            objectToFollow = Camera.main.gameObject;
         }
         transformToFollow = 2 * transform.position - objectToFollow.transform.position;
     }

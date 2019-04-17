@@ -3,8 +3,6 @@
 public class MazeCrystalQuest : Quest
 {
     public int piecesCollected = 0;
-    public GameObject background;
-    private static bool amISubscribed = false;
 
     public override void QuestProgress(GameObject crystal)
     {
@@ -20,15 +18,10 @@ public class MazeCrystalQuest : Quest
         else if (settings.edutainmentLevel == 2)
         {
             piecesCollected += 1;
-            crystal.SetActive(false);
             if (piecesCollected >= 7)
             {
-                if (!amISubscribed)
-                {
-                    background.GetComponent<PlayMiniGame>().OnQuestionAnswer += MazeCrystalQuest_OnQuestionAnswer;
-                    amISubscribed = true;
-                    gameManager.GetComponent<GameManagement>().ToggleQuestions();
-                }
+                gameManager.GetComponent<PlayMiniGame>().OnQuestionAnswer += MazeCrystalQuest_OnQuestionAnswer;
+                gameManager.GetComponent<GameManagement>().ToggleQuestions();
             }
             else
             {

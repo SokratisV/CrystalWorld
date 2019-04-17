@@ -46,23 +46,28 @@ public class GameManagement : MonoBehaviour
                 if (!settingsActive)
                 {
                     EscapeMenuPause();
+                    //print("Toggle Esc Menu");
                 }
                 else
                 {
+                    //print("Toggle Settings");
                     Settings();
                 }
             }
             else if (miniGamesActive)
             {
+                //print("Toggle Mini Games");
                 ToggleMiniGames();
             }
             else if (questionsActive)
             {
+                //print("Toggle questions");
                 ToggleQuestions();
             }
             else if (shipMenuActive)
             {
-                ActivateTeleportMenu();
+                ToggleShipUI();
+                //print("Toggle Ship Menu");
             }
         }
         if (Input.GetKeyDown(KeyCode.F2))
@@ -71,7 +76,7 @@ public class GameManagement : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.F1))
         {
-            ActivateTeleportMenu();
+            ToggleShipUI();
         }
         if (Input.GetKeyDown(KeyCode.F3))
         {
@@ -81,10 +86,10 @@ public class GameManagement : MonoBehaviour
         {
             controlsPanelAnimator.SetTrigger("Enable");
         }
-        if (Input.GetKeyUp(KeyCode.Tab))
-        {
-            controlsPanelAnimator.SetTrigger("Disable");
-        }
+        //if (Input.GetKeyUp(KeyCode.Tab))
+        //{
+        //    controlsPanelAnimator.SetTrigger("Disable");
+        //}
         //if (Input.GetKeyDown(KeyCode.Tab))
         //{
         //    GetComponent<SwitchModel>().ChangeModel();
@@ -153,7 +158,7 @@ public class GameManagement : MonoBehaviour
     {
         Application.Quit();
     }
-    public void ActivateTeleportMenu()
+    public void ToggleShipUI()
     {
         Pause();
         shipMenuActive = !shipMenuActive;
@@ -174,6 +179,10 @@ public class GameManagement : MonoBehaviour
     public void ChangeScene(int index)
     {
         SceneManager.LoadScene(index);
+        if (isPaused)
+        {
+            Pause();
+        }
     }
     public void ToggleQuestions()
     {

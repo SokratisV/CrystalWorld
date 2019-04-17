@@ -1116,7 +1116,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1229623924064334302}
-  - component: {fileID: 1229623924064334303}
   m_Layer: 11
   m_Name: Village
   m_TagString: Untagged
@@ -1149,18 +1148,6 @@ Transform:
   m_Father: {fileID: 1229623924546818660}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1229623924064334303
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1229623924064334289}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd17f6b44d3a66d40bf98f9e58d4e17b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1229623924068303891
 GameObject:
   m_ObjectHideFlags: 0
@@ -6484,15 +6471,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2357bdd96b6ce844fa79e39acd2bdbbc, type: 3}
---- !u!1 &1229623925341206328 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 153050, guid: 2357bdd96b6ce844fa79e39acd2bdbbc,
-    type: 3}
-  m_PrefabInstance: {fileID: 1229623925341348578}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1229623925341457960 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 421066, guid: 2357bdd96b6ce844fa79e39acd2bdbbc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1229623925341348578}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1229623925341206328 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 153050, guid: 2357bdd96b6ce844fa79e39acd2bdbbc,
     type: 3}
   m_PrefabInstance: {fileID: 1229623925341348578}
   m_PrefabAsset: {fileID: 0}

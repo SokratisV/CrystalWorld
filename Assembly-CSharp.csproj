@@ -60,8 +60,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AdjustSlider.cs" />
+    <Compile Include="Assets\Imported\Sky FX Pack\Scripts\LightBeamsControlScript.cs" />
+    <Compile Include="Assets\Imported\Sky FX Pack\Scripts\LookAtBehaviour.cs" />
+    <Compile Include="Assets\Imported\Sky FX Pack\Scripts\LookAtCameraBehaviour.cs" />
+    <Compile Include="Assets\Imported\Sky FX Pack\Scripts\RayBehavior.cs" />
+    <Compile Include="Assets\Imported\Sky FX Pack\Scripts\RotateBehaviour.cs" />
+    <Compile Include="Assets\Imported\Sky FX Pack\Scripts\ScrollBehaviour.cs" />
     <Compile Include="Assets\Imported\Standard Assets\Utility\FPSCounter.cs" />
-    <Compile Include="Assets\Rotate.cs" />
     <Compile Include="Assets\Scripts\AdjustCellSize.cs" />
     <Compile Include="Assets\Scripts\AdjustCharacterHeight.cs" />
     <Compile Include="Assets\Scripts\AdjustCollider.cs" />
@@ -111,6 +117,8 @@
     <Compile Include="Assets\Scripts\RhinoAI.cs" />
     <Compile Include="Assets\Scripts\RhinoKnockback.cs" />
     <Compile Include="Assets\Scripts\RhinoSleep.cs" />
+    <Compile Include="Assets\Scripts\Rotate.cs" />
+    <Compile Include="Assets\Scripts\ShowModel.cs" />
     <Compile Include="Assets\Scripts\SizeAdjuster.cs" />
     <Compile Include="Assets\Scripts\Slope.cs" />
     <Compile Include="Assets\Scripts\StartOfGameWave.cs" />
@@ -125,12 +133,10 @@
     <Compile Include="Assets\Scripts\TurnBasedOnCamera.cs" />
     <Compile Include="Assets\Scripts\VillageCrystalQuest.cs" />
     <Compile Include="Assets\Scripts\WallJump.cs" />
-    <Compile Include="Assets\ShowModel.cs" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\Imported\SineVFX\TranslucentCrystals\Readme.txt" />
-    <None Include="Assets\Imported\Fireflies\Shaders\FireFly.shader" />
     <None Include="Assets\Imported\Almgp_particle_vol_1\shaders\emmision_particle.shader" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\Imported\MedievalTownExteriors\Readme.txt" />
