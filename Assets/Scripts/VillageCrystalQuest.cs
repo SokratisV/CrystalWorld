@@ -45,7 +45,6 @@ public class VillageCrystalQuest : Quest
 
     private void VillageCrystalQuest_OnMiniGameWin(object sender, System.EventArgs e)
     {
-        print(sender);
         QuestCompleted();
     }
 

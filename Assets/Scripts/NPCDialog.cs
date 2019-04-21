@@ -31,7 +31,7 @@ public class NPCDialog : MonoBehaviour
     {
         dialogText = npcUI.GetComponentInChildren<TextMeshProUGUI>();
         anim = npcUI.GetComponentInChildren<Animator>();
-        delay = new WaitForSeconds(4f);
+        delay = new WaitForSeconds(5f);
     }
     private void Update()
     {
@@ -113,5 +113,4 @@ public class NPCDialog : MonoBehaviour
         yield return delay;
         uiCloseDelay = true;
     }
-
 }

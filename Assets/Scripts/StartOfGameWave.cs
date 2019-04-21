@@ -26,6 +26,7 @@ public class StartOfGameWave : MonoBehaviour
     {
         if (collision.transform.tag == "Player")
         {
+            collision.gameObject.GetComponent<Animator>().SetTrigger("Wave");
             Destroy(this);
         }
     }

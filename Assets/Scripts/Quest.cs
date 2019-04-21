@@ -18,6 +18,7 @@ public abstract class Quest : MonoBehaviour
             gameManager.GetComponents<AudioSource>()[1].clip = questCompletedSound;
             gameManager.GetComponents<AudioSource>()[1].Play();
         }
+        gameObject.SetActive(false);
     }
 
     abstract public void QuestProgress(GameObject crystal);

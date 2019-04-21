@@ -60,7 +60,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\AdjustSlider.cs" />
     <Compile Include="Assets\Imported\Sky FX Pack\Scripts\LightBeamsControlScript.cs" />
     <Compile Include="Assets\Imported\Sky FX Pack\Scripts\LookAtBehaviour.cs" />
     <Compile Include="Assets\Imported\Sky FX Pack\Scripts\LookAtCameraBehaviour.cs" />
@@ -75,12 +74,14 @@
     <Compile Include="Assets\Scripts\AdjustColorPalette.cs" />
     <Compile Include="Assets\Scripts\AdjustHeight.cs" />
     <Compile Include="Assets\Scripts\AdjustSize.cs" />
+    <Compile Include="Assets\Scripts\AdjustSlider.cs" />
     <Compile Include="Assets\Scripts\AnimalCrystalQuest.cs" />
     <Compile Include="Assets\Scripts\CheckForFood.cs" />
     <Compile Include="Assets\Scripts\Climbing.cs" />
     <Compile Include="Assets\Scripts\ClimbingUp.cs" />
     <Compile Include="Assets\Scripts\ColorChange.cs" />
     <Compile Include="Assets\Scripts\ColorPalette.cs" />
+    <Compile Include="Assets\Scripts\CreateInformationUI.cs" />
     <Compile Include="Assets\Scripts\CrystalPickup.cs" />
     <Compile Include="Assets\Scripts\CrystalPiecesPickup.cs" />
     <Compile Include="Assets\Scripts\DeathZone.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="Assets\Scripts\GameManagement.cs" />
     <Compile Include="Assets\Scripts\GameProgress.cs" />
     <Compile Include="Assets\Scripts\GenerateEquations.cs" />
+    <Compile Include="Assets\Scripts\HighlightElement.cs" />
     <Compile Include="Assets\Scripts\JSONHelper.cs" />
     <Compile Include="Assets\Scripts\JumpForce.cs" />
     <Compile Include="Assets\Scripts\LoadFromJSON.cs" />
@@ -119,6 +121,7 @@
     <Compile Include="Assets\Scripts\RhinoSleep.cs" />
     <Compile Include="Assets\Scripts\Rotate.cs" />
     <Compile Include="Assets\Scripts\ShowModel.cs" />
+    <Compile Include="Assets\Scripts\ShowTooltip.cs" />
     <Compile Include="Assets\Scripts\SizeAdjuster.cs" />
     <Compile Include="Assets\Scripts\Slope.cs" />
     <Compile Include="Assets\Scripts\StartOfGameWave.cs" />

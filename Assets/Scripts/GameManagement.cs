@@ -24,6 +24,7 @@ public class GameManagement : MonoBehaviour
     private Animator controlsPanelAnimator;
     private bool minigameQuestionSwitch = false;
     private bool questionsActive = false, miniGamesActive = false, escMenuActive = false, settingsActive = false, shipMenuActive = false;
+    private float defaultSensitivityX, defaultSensitivityY;
 
     private void Start()
     {
@@ -35,6 +36,8 @@ public class GameManagement : MonoBehaviour
         climbingScript = player.GetComponent<Climbing>();
         cinemachineScript = cinemachineCamera.GetComponent<Cinemachine.CinemachineFreeLook>();
         controlsPanelAnimator = controlsPanel.GetComponent<Animator>();
+        defaultSensitivityX = cinemachineScript.m_XAxis.m_MaxSpeed;
+        defaultSensitivityY = cinemachineScript.m_YAxis.m_MaxSpeed;
     }
 
     void Update()
@@ -103,39 +106,39 @@ public class GameManagement : MonoBehaviour
     {
         if (isPaused)
         {
+            //Unpause
             isPaused = false;
             movementScript.allowMovement = true;
             climbingScript.allowClimbing = true;
             Time.timeScale = 1;
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
         else
         {
+            //Pause
             isPaused = true;
             movementScript.allowMovement = false;
             climbingScript.allowClimbing = false;
             Time.timeScale = 0;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
+
     }
     public void EscapeMenuPause()
     {
         if (isPaused)
         {
             escMenuCanvas.SetActive(false);
-            isPaused = false;
-            movementScript.allowMovement = true;
-            climbingScript.allowClimbing = true;
-            Time.timeScale = 1;
             escMenuActive = false;
         }
         else
         {
             escMenuCanvas.SetActive(true);
-            isPaused = true;
-            movementScript.allowMovement = false;
-            climbingScript.allowClimbing = false;
-            Time.timeScale = 0;
             escMenuActive = true;
         }
+        Pause();
     }
     public void Settings()
     {
@@ -143,14 +146,14 @@ public class GameManagement : MonoBehaviour
         {
             settingsMenuCanvas.SetActive(false);
             escMenuCanvas.SetActive(true);
-            isPaused = true;
+            //isPaused = true;
             settingsActive = false;
         }
         else
         {
             settingsMenuCanvas.SetActive(true);
             escMenuCanvas.SetActive(false);
-            isPaused = false;
+            //isPaused = false;
             settingsActive = true;
         }
     }
@@ -178,11 +181,21 @@ public class GameManagement : MonoBehaviour
     }
     public void ChangeScene(int index)
     {
-        SceneManager.LoadScene(index);
         if (isPaused)
         {
             Pause();
         }
+        if (index == 0)
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        SceneManager.LoadScene(index);
     }
     public void ToggleQuestions()
     {
@@ -217,5 +230,10 @@ public class GameManagement : MonoBehaviour
         else
         {
         }
+    }
+    public void ChangeMouseSensitivity(float value)
+    {
+        cinemachineScript.m_XAxis.m_MaxSpeed = defaultSensitivityX + defaultSensitivityX * value / 100;
+        cinemachineScript.m_YAxis.m_MaxSpeed = defaultSensitivityY + defaultSensitivityY * value / 100;
     }
 }
