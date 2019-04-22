@@ -1,4 +1,5 @@
 ﻿using System;
+using TMPro;
 using UnityEngine;
 
 public abstract class Quest : MonoBehaviour
@@ -9,10 +10,14 @@ public abstract class Quest : MonoBehaviour
     public AudioClip questCompletedSound;
     public PlayerSettings settings;
     public GameObject background;
+    public TextMeshProUGUI crystalPiecesOutOf;
+    public TextMeshProUGUI crystalPiecesScore;
+    public GameObject questCompletedImage;
 
     protected void QuestCompleted()
     {
         OnQuestComplete?.Invoke(this, EventArgs.Empty);
+        questCompletedImage.SetActive(true);
         if (questCompletedSound != null)
         {
             gameManager.GetComponents<AudioSource>()[1].clip = questCompletedSound;

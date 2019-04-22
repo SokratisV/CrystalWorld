@@ -10,6 +10,7 @@ public class GameProgress : MonoBehaviour
     public GameObject[] eduLevel0;
     public GameObject[] eduLevel1;
     public GameObject[] eduLevel2;
+    public GameObject[] crystalCompleteImage;
 
     private GameObject[][] eduLevels;
 
@@ -45,18 +46,21 @@ public class GameProgress : MonoBehaviour
                 villageCrystalCollected = true;
                 eduLevels[settings.edutainmentLevel][0].GetComponent<Quest>().OnQuestComplete -= GameProgress_OnQuestComplete;
                 dialogScript.ShowDialog(1);
+                crystalCompleteImage[0].SetActive(true);
                 break;
             case "maze":
                 print("completed maze quest");
                 mazeCrystalCollected = true;
                 eduLevels[settings.edutainmentLevel][1].GetComponent<Quest>().OnQuestComplete -= GameProgress_OnQuestComplete;
                 dialogScript.ShowDialog(2);
+                crystalCompleteImage[1].SetActive(true);
                 break;
             case "animal":
                 print("completed animal quest");
                 animalCrystalCollected = true;
                 eduLevels[settings.edutainmentLevel][2].GetComponent<Quest>().OnQuestComplete -= GameProgress_OnQuestComplete;
                 dialogScript.ShowDialog(4);
+                crystalCompleteImage[2].SetActive(true);
                 break;
             default:
                 print("Unknown quest");

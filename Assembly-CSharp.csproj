@@ -60,6 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AdjustSoundWithDistance.cs" />
     <Compile Include="Assets\Imported\Sky FX Pack\Scripts\LightBeamsControlScript.cs" />
     <Compile Include="Assets\Imported\Sky FX Pack\Scripts\LookAtBehaviour.cs" />
     <Compile Include="Assets\Imported\Sky FX Pack\Scripts\LookAtCameraBehaviour.cs" />

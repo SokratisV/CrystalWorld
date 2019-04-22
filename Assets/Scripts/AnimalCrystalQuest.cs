@@ -4,14 +4,30 @@ public class AnimalCrystalQuest : Quest
 {
     public int piecesCollected = 0;
 
+    private void Start()
+    {
+        if (settings.edutainmentLevel == 2)
+        {
+            crystalPiecesOutOf.text = "/7";
+            crystalPiecesScore.text = "0";
+        }
+        else
+        {
+            crystalPiecesOutOf.text = "/1";
+            crystalPiecesScore.text = "0";
+        }
+    }
+
     public override void QuestProgress(GameObject crystal)
     {
         if (settings.edutainmentLevel == 0)
         {
+            piecesCollected++;
             QuestCompleted();
         }
         else if (settings.edutainmentLevel == 1)
         {
+            piecesCollected++;
             gameManager.GetComponent<GameManagement>().ToggleMiniGames();
             background.GetComponent<PlayMiniGame>().OnMiniGameWin += AnimalCrystalQuest_OnMiniGameWin;
         }
@@ -28,6 +44,7 @@ public class AnimalCrystalQuest : Quest
                 //toggle information UI
             }
         }
+        crystalPiecesScore.text = piecesCollected.ToString();
         crystal.SetActive(false);
     }
 

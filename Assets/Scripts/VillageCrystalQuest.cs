@@ -4,9 +4,16 @@ public class VillageCrystalQuest : Quest
 {
     public int piecesCollected = 0;
 
+    private void Start()
+    {
+        crystalPiecesOutOf.text = "/7";
+        crystalPiecesScore.text = "0";
+    }
+
     public override void QuestProgress(GameObject crystal)
     {
         piecesCollected += 1;
+        crystalPiecesScore.text = piecesCollected.ToString();
         crystal.SetActive(false);
 
         if (settings.edutainmentLevel == 0)
