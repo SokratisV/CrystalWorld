@@ -31,7 +31,7 @@ public class RememberSquares : MonoBehaviour {
         {
             countDownText = GameObject.FindWithTag("CountDown").GetComponent<TextMeshProUGUI>();
         }
-        GetComponentInChildren<MemoryClass>().ResetScoreAndAttempts();
+        //GetComponentInChildren<MemoryClass>().ResetScoreAndAttempts();
         delay = new WaitForSecondsRealtime(1f);
         CalculatePanelSize();
     }

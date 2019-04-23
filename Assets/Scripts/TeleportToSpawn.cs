@@ -45,6 +45,7 @@ public class TeleportToSpawn : MonoBehaviour
     {
         Teleport(spawnPoints.GetChild(point));
         GetComponent<GameManagement>().ToggleShipUI();
+        GetComponent<GameManagement>().currentArea = point;
         StartCoroutine(TurnOffMenu());
         for (int i = 0; i < seaSoundObjects.Length; i++)
         {
@@ -62,6 +63,6 @@ public class TeleportToSpawn : MonoBehaviour
     {
         yield return delay;
         cinemachineVCam.SetActive(true);
-        shipMenuUI.SetActive(false);
+        //shipMenuUI.SetActive(false);
     }
 }

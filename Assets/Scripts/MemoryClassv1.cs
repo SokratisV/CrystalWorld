@@ -18,21 +18,21 @@ public class MemoryClassv1 : MonoBehaviour{
     private new AudioSource audio;
     private static int score;
     private static int numberOfAttempts;
-    private TextMeshProUGUI scoreText;
-    private TextMeshProUGUI attemptsText;
+    //private TextMeshProUGUI scoreText;
+    //private TextMeshProUGUI attemptsText;
     private static bool allowScoreChanges;
     private WaitForSecondsRealtime delay;
     private static FindPairs findPairs;
 
     private void Start()
     {
-        scoreText = GameObject.FindWithTag("ScoreText").GetComponent<TextMeshProUGUI>();
-        attemptsText = GameObject.FindWithTag("AttemptsText").GetComponent<TextMeshProUGUI>();
+        //scoreText = GameObject.FindWithTag("ScoreText").GetComponent<TextMeshProUGUI>();
+        //attemptsText = GameObject.FindWithTag("AttemptsText").GetComponent<TextMeshProUGUI>();
         openCards = new GameObject[2];
         GetComponent<Image>().sprite = hiddenSprite;
         audio = GetComponent<AudioSource>();
-        ResetScore();
-        ResetAttempts();
+        //ResetScore();
+        //ResetAttempts();
         blockedFromClicking = false;
         openCardsIndex = 0;
         allowScoreChanges = true;
@@ -105,7 +105,7 @@ public class MemoryClassv1 : MonoBehaviour{
         counter = 0;
         if (allowScoreChanges)
         {
-            IncreaseAttemptsCount();
+            //IncreaseAttemptsCount();
             CheckForSameCard();
         }
         blockedFromClicking = false;
@@ -120,7 +120,7 @@ public class MemoryClassv1 : MonoBehaviour{
             openCards[1].transform.parent.GetComponent<Image>().color = Color.green;
             openCards[0].GetComponent<Button>().interactable = false;
             openCards[1].GetComponent<Button>().interactable = false;
-            IncreaseScore();
+            //IncreaseScore();
         }
         else
         {
@@ -138,40 +138,40 @@ public class MemoryClassv1 : MonoBehaviour{
         }
 
     }
-    public void IncreaseScore()
-    {
-        if (allowScoreChanges)
-        {
-            score++;
-            scoreText.text = "" + score;
-        }
-    }
-    public void IncreaseAttemptsCount()
-    {
-        if (allowScoreChanges)
-        {
-            numberOfAttempts++;
-            attemptsText.text = "" + numberOfAttempts;
-        }
-    }
-    public void ResetScore()
-    {
-        score = 0;
-        scoreText.GetComponent<ResetValue>().ResetToDefault();
+    //public void IncreaseScore()
+    //{
+    //    if (allowScoreChanges)
+    //    {
+    //        score++;
+    //        scoreText.text = "" + score;
+    //    }
+    //}
+    //public void IncreaseAttemptsCount()
+    //{
+    //    if (allowScoreChanges)
+    //    {
+    //        numberOfAttempts++;
+    //        attemptsText.text = "" + numberOfAttempts;
+    //    }
+    //}
+    //public void ResetScore()
+    //{
+    //    score = 0;
+    //    scoreText.GetComponent<ResetValue>().ResetToDefault();
 
-    }
-    public void ResetAttempts()
-    {
-        numberOfAttempts = 0;
-        attemptsText.GetComponent<ResetValue>().ResetToDefault();
+    //}
+    //public void ResetAttempts()
+    //{
+    //    numberOfAttempts = 0;
+    //    attemptsText.GetComponent<ResetValue>().ResetToDefault();
 
-    }
-    public void ResetScoreAndAttempts()
-    {
-        ResetScore();
-        ResetAttempts();
-        StartCoroutine(IdleTime());
-    }
+    //}
+    //public void ResetScoreAndAttempts()
+    //{
+    //    ResetScore();
+    //    ResetAttempts();
+    //    StartCoroutine(IdleTime());
+    //}
     private IEnumerator WonTheGame()
     {
         yield return delay;

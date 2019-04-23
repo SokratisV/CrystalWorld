@@ -123,7 +123,6 @@ public class LoadFromJSON : MonoBehaviour
         }
         questionsUICanvas.SetActive(!questionsUICanvas.activeSelf);
         //CheckForQuestionSkip();
-        GetComponent<GameManagement>().Pause();
     }
     public void GetNextQuestion()
     {

@@ -9,8 +9,7 @@ public class TeleportMenu : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            gameManager.GetComponent<GameManagement>().Pause();
-            shipMenuUI.SetActive(true);
+            gameManager.GetComponent<GameManagement>().ToggleShipUI();
         }
     }
 

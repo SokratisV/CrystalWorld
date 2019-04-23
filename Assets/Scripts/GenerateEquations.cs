@@ -9,8 +9,8 @@ public class GenerateEquations : MonoBehaviour {
     public AudioClip correctSound;
     public AudioClip incorrectSound;
     public TextMeshProUGUI equationText;
-    private TextMeshProUGUI scoreText;
-    private TextMeshProUGUI attemptsText;
+    //private TextMeshProUGUI scoreText;
+    //private TextMeshProUGUI attemptsText;
     private int score;
     private int attempts;
     private AudioSource audioSource;
@@ -25,18 +25,18 @@ public class GenerateEquations : MonoBehaviour {
         GetRandomEquationIndex();
         SetEquationText();
         SetButtonAnswers();
-        scoreText = GameObject.FindGameObjectWithTag("ScoreText").GetComponent<TextMeshProUGUI>();
-        attemptsText = GameObject.FindGameObjectWithTag("AttemptsText").GetComponent<TextMeshProUGUI>();
+        //scoreText = GameObject.FindGameObjectWithTag("ScoreText").GetComponent<TextMeshProUGUI>();
+        //attemptsText = GameObject.FindGameObjectWithTag("AttemptsText").GetComponent<TextMeshProUGUI>();
         delay = new WaitForSecondsRealtime(2f);
         CalculatePanelSize();
     }
     public void CheckAnswer(int buttonNumber)
     {
-        IncreaseAttempts();
+        //IncreaseAttempts();
         if (buttonNumber == correctButtonIndex)
         {
             audioSource.clip = correctSound;
-            IncreaseScore();
+            //IncreaseScore();
             GetComponentInParent<PlayMiniGame>().WonGame();
         }
         else
@@ -67,31 +67,31 @@ public class GenerateEquations : MonoBehaviour {
         SetButtonAnswers();
         SetEquationText();
     }
-    private void IncreaseAttempts()
-    {
-        attempts++;
-        attemptsText.text = "" + attempts;
-    }
-    private void IncreaseScore()
-    {
-        score++;
-        scoreText.text = "" + score;
-    }
-    private void ResetScore()
-    {
-        score = 0;
-        scoreText.text = "" + score;
-    }
-    private void ResetAttempts()
-    {
-        attempts = 0;
-        attemptsText.text = "" + attempts;
-    }
-    public void ResetScoreAndAttempts()
-    {
-        ResetScore();
-        ResetAttempts();
-    }
+    //private void IncreaseAttempts()
+    //{
+    //    attempts++;
+    //    attemptsText.text = "" + attempts;
+    //}
+    //private void IncreaseScore()
+    //{
+    //    score++;
+    //    scoreText.text = "" + score;
+    //}
+    //private void ResetScore()
+    //{
+    //    score = 0;
+    //    scoreText.text = "" + score;
+    //}
+    //private void ResetAttempts()
+    //{
+    //    attempts = 0;
+    //    attemptsText.text = "" + attempts;
+    //}
+    //public void ResetScoreAndAttempts()
+    //{
+    //    ResetScore();
+    //    ResetAttempts();
+    //}
     private void ResetButtons()
     {
         foreach (TextMeshProUGUI item in buttons)

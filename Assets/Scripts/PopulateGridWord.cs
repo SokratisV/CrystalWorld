@@ -16,8 +16,8 @@ public class PopulateGridWord : MonoBehaviour {
     public AudioClip victory;
     public string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private new AudioSource audio;
-    private TextMeshProUGUI scoreText;
-    private TextMeshProUGUI attemptsText;
+    //private TextMeshProUGUI scoreText;
+    //private TextMeshProUGUI attemptsText;
     private int score;
     private int numberOfAttempts;
     private int indexOfWord;
@@ -54,8 +54,8 @@ public class PopulateGridWord : MonoBehaviour {
     private void Start()
     {
         audio = GetComponent<AudioSource>();
-        scoreText = GameObject.FindGameObjectWithTag("ScoreText").GetComponent<TextMeshProUGUI>();
-        attemptsText = GameObject.FindGameObjectWithTag("AttemptsText").GetComponent<TextMeshProUGUI>();
+        //scoreText = GameObject.FindGameObjectWithTag("ScoreText").GetComponent<TextMeshProUGUI>();
+        //attemptsText = GameObject.FindGameObjectWithTag("AttemptsText").GetComponent<TextMeshProUGUI>();
         GetRandomWord();
         PopulateWordPanel();
         PopulateAlphabetPanel();
@@ -130,13 +130,13 @@ public class PopulateGridWord : MonoBehaviour {
         if (correct)
         {
             audio.clip = correctSound;
-            IncreaseScore();
-            IncreaseAttemptsCount();
+            //IncreaseScore();
+            //IncreaseAttemptsCount();
         }
         else
         {
             audio.clip = incorrectSound;
-            IncreaseAttemptsCount();
+            //IncreaseAttemptsCount();
             if (numberOfAttempts >= howManyLetters * 0.6)
             {
                 GetComponentInParent<PlayMiniGame>().LostGame();
@@ -219,29 +219,29 @@ public class PopulateGridWord : MonoBehaviour {
         GetComponentInParent<PlayMiniGame>().WonGame();
         stopInput = false;
     }
-    public void IncreaseScore()
-    {
-        score++;
-        scoreText.text = "" + score;
-    }
-    public void IncreaseAttemptsCount()
-    {
-        numberOfAttempts++;
-        attemptsText.text = "" + numberOfAttempts;
-    }
-    public void ResetScore()
-    {
-        score = 0;
-        scoreText.GetComponent<ResetValue>().ResetToDefault();
-    }
-    public void ResetAttempts()
-    {
-        numberOfAttempts = 0;
-        attemptsText.GetComponent<ResetValue>().ResetToDefault();
-    }
-    public void ResetScoreAndAttempts()
-    {
-        ResetScore();
-        ResetAttempts();
-    }
+    //public void IncreaseScore()
+    //{
+    //    score++;
+    //    scoreText.text = "" + score;
+    //}
+    //public void IncreaseAttemptsCount()
+    //{
+    //    numberOfAttempts++;
+    //    attemptsText.text = "" + numberOfAttempts;
+    //}
+    //public void ResetScore()
+    //{
+    //    score = 0;
+    //    scoreText.GetComponent<ResetValue>().ResetToDefault();
+    //}
+    //public void ResetAttempts()
+    //{
+    //    numberOfAttempts = 0;
+    //    attemptsText.GetComponent<ResetValue>().ResetToDefault();
+    //}
+    //public void ResetScoreAndAttempts()
+    //{
+    //    ResetScore();
+    //    ResetAttempts();
+    //}
 }

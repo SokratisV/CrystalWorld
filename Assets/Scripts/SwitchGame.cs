@@ -8,15 +8,15 @@ public class SwitchGame : MonoBehaviour {
     public GameObject[] prefabGames;
     private int whichPrefabIsActive = 0;
     private GameObject activeMiddlePanel;
-    public TextMeshProUGUI gameNameText;
-    public GameObject backgroundOfGames; //previous owner of script, MiniGamesUI--> Background
+    //public TextMeshProUGUI gameNameText;
+    public GameObject backgroundOfGames;
     public GameObject miniGamesUI;
 
     private void Start()
     {
         activeMiddlePanel = Instantiate(prefabGames[whichPrefabIsActive], backgroundOfGames.transform);
         activeMiddlePanel.name = prefabGames[whichPrefabIsActive].name;
-        gameNameText.text = "Game: " + activeMiddlePanel.name;
+        //gameNameText.text = "Game: " + activeMiddlePanel.name;
         StartCoroutine(EndOfFrame());
     }
     public void ToggleMiniGames()
@@ -24,24 +24,23 @@ public class SwitchGame : MonoBehaviour {
         if (miniGamesUI.activeSelf)
         {
             miniGamesUI.SetActive(false);
-            GetComponent<GameManagement>().Pause();
         }
         else
         {
             ChangeGame();
             miniGamesUI.SetActive(true);
-            GetComponent<GameManagement>().Pause();
         }
     }
     public void ChangeGame()
     {
         Destroy(activeMiddlePanel);
-        whichPrefabIsActive++;
-        whichPrefabIsActive = whichPrefabIsActive % prefabGames.Length;
+        //whichPrefabIsActive++;
+        //whichPrefabIsActive = whichPrefabIsActive % prefabGames.Length;
+        whichPrefabIsActive = Random.Range(0, prefabGames.Length);
         activeMiddlePanel = Instantiate(prefabGames[whichPrefabIsActive], backgroundOfGames.transform);
         activeMiddlePanel.name = prefabGames[whichPrefabIsActive].name;
         ResetUIText();
-        gameNameText.text = "Game: " + activeMiddlePanel.name;
+        //gameNameText.text = "Game: " + activeMiddlePanel.name;
         StartCoroutine(EndOfFrame());
     }
     public void RestartCurrent()
@@ -49,7 +48,7 @@ public class SwitchGame : MonoBehaviour {
         Destroy(activeMiddlePanel);
         activeMiddlePanel = Instantiate(prefabGames[whichPrefabIsActive], backgroundOfGames.transform);
         activeMiddlePanel.name = prefabGames[whichPrefabIsActive].name;
-        gameNameText.text = "Game: " + activeMiddlePanel.name;
+        //gameNameText.text = "Game: " + activeMiddlePanel.name;
         StartCoroutine(EndOfFrame());
     }
     private void ResetUIText()

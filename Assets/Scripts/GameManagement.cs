@@ -15,6 +15,7 @@ public class GameManagement : MonoBehaviour
     public GameObject shipMenuUI;
     public GameObject controlsPanel;
     public PlayerSettings settings;
+    public int currentArea = 0; //0 - Village, 1 - Forest, 2 - Maze
 
     [SerializeField]
     private bool isPaused = false;
@@ -200,11 +201,13 @@ public class GameManagement : MonoBehaviour
     public void ToggleQuestions()
     {
         GetComponent<LoadFromJSON>().ToggleQuestionMenu();
+        Pause();
         questionsActive = !questionsActive;
     }
     public void ToggleMiniGames()
     {
         GetComponent<SwitchGame>().ToggleMiniGames();
+        Pause();
         miniGamesActive = !miniGamesActive;
     }
     public void SaveSliderValue(float value)

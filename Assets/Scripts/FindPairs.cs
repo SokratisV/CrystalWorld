@@ -34,7 +34,7 @@ public class FindPairs : MonoBehaviour {
     }
     public void RestartGame()
     {
-        GetComponentInChildren<MemoryClassv1>().ResetScoreAndAttempts();
+        //GetComponentInChildren<MemoryClassv1>().ResetScoreAndAttempts();
         nextSpriteCounter = 0;
         ArrangeArray();
         foreach (MemoryClassv1 item in GetComponentsInChildren<MemoryClassv1>())
