@@ -76,7 +76,7 @@ public class GameProgress : MonoBehaviour
         }
         if (villageCrystalCollected && mazeCrystalCollected && animalCrystalCollected)
         {
-            dialogScript.ShowDialog(5);
+            dialogScript.ShowDialog(6);
         }
     }
 }

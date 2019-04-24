@@ -4,6 +4,7 @@ using UnityEngine;
 public class TeleportToSpawn : MonoBehaviour
 {
     public Transform spawnPoints;
+    public Transform debugSpawnPoints;
     public GameObject player;
     public GameObject cinemachineVCam;
     public GameObject shipMenuUI;
@@ -21,6 +22,7 @@ public class TeleportToSpawn : MonoBehaviour
     {
         cinemachineVCam.SetActive(false);
         player.transform.position = point.position;
+        player.transform.rotation = point.rotation;
     }
     public void SetLastSpawn(int spawnNumber)
     {
@@ -63,6 +65,6 @@ public class TeleportToSpawn : MonoBehaviour
     {
         yield return delay;
         cinemachineVCam.SetActive(true);
-        //shipMenuUI.SetActive(false);
+        Camera.main.transform.LookAt(debugSpawnPoints.GetChild(GetComponent<GameManagement>().currentArea));
     }
 }

@@ -60,8 +60,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\AdjustSoundWithDistance.cs" />
-    <Compile Include="Assets\DisableButton.cs" />
     <Compile Include="Assets\Imported\Sky FX Pack\Scripts\LightBeamsControlScript.cs" />
     <Compile Include="Assets\Imported\Sky FX Pack\Scripts\LookAtBehaviour.cs" />
     <Compile Include="Assets\Imported\Sky FX Pack\Scripts\LookAtCameraBehaviour.cs" />
@@ -77,6 +75,7 @@
     <Compile Include="Assets\Scripts\AdjustHeight.cs" />
     <Compile Include="Assets\Scripts\AdjustSize.cs" />
     <Compile Include="Assets\Scripts\AdjustSlider.cs" />
+    <Compile Include="Assets\Scripts\AdjustSoundWithDistance.cs" />
     <Compile Include="Assets\Scripts\AnimalCrystalQuest.cs" />
     <Compile Include="Assets\Scripts\CheckForFood.cs" />
     <Compile Include="Assets\Scripts\Climbing.cs" />
@@ -88,6 +87,7 @@
     <Compile Include="Assets\Scripts\CrystalPiecesPickup.cs" />
     <Compile Include="Assets\Scripts\DeathZone.cs" />
     <Compile Include="Assets\Scripts\DeleteAfterDelay.cs" />
+    <Compile Include="Assets\Scripts\DisableButton.cs" />
     <Compile Include="Assets\Scripts\Eaten.cs" />
     <Compile Include="Assets\Scripts\FindPairs.cs" />
     <Compile Include="Assets\Scripts\FoodPickup.cs" />
@@ -138,6 +138,7 @@
     <Compile Include="Assets\Scripts\TurnBasedOnCamera.cs" />
     <Compile Include="Assets\Scripts\VillageCrystalQuest.cs" />
     <Compile Include="Assets\Scripts\WallJump.cs" />
+    <Compile Include="Assets\TriggerCutscene.cs" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
