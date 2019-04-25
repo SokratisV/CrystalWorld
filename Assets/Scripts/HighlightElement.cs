@@ -4,13 +4,13 @@ using UnityEngine;
 public class HighlightElement : MonoBehaviour
 {
     private Color defaultColor;
-    private Color highlightedColor;
+    public Color highlightedColor;
     public PlayerSettings settings;
 
     private void Start()
     {
         defaultColor = new Color(255,255,255);
-        highlightedColor = new Color(180,0,150);
+        //highlightedColor = new Color(180,0,150);
         Highlight(settings.edutainmentLevel);
     }
 

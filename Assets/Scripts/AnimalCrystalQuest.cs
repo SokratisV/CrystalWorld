@@ -20,6 +20,7 @@ public class AnimalCrystalQuest : Quest
 
     public override void QuestProgress(GameObject crystal)
     {
+        crystalPiecesScore.GetComponentInParent<ProgressFeedback>().GiveFeedback();
         if (settings.edutainmentLevel == 0)
         {
             piecesCollected++;

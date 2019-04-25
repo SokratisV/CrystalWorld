@@ -19,6 +19,7 @@ namespace UnityStandardAssets.Utility
         {
             m_FpsNextPeriod = Time.realtimeSinceStartup + fpsMeasurePeriod;
             m_Text = GetComponent<TextMeshProUGUI>();
+            m_Text.color = new Color(219, 76, 119);
         }
 
 

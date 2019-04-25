@@ -15,6 +15,7 @@ public class VillageCrystalQuest : Quest
         piecesCollected += 1;
         crystalPiecesScore.text = piecesCollected.ToString();
         crystal.SetActive(false);
+        crystalPiecesScore.GetComponentInParent<ProgressFeedback>().GiveFeedback();
 
         if (settings.edutainmentLevel == 0)
         {

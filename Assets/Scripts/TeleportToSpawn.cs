@@ -9,18 +9,25 @@ public class TeleportToSpawn : MonoBehaviour
     public GameObject cinemachineVCam;
     public GameObject shipMenuUI;
     public GameObject[] seaSoundObjects;
+    public GameObject vCameras;
+    //public Cinemachine.CinemachineVirtualCamera village; 
+    //public Cinemachine.CinemachineVirtualCamera forest; 
+    //public Cinemachine.CinemachineVirtualCamera maze; 
 
     private WaitForSeconds delay = new WaitForSeconds(0.25f);
     private Transform lastSpawnPoint;
+    private Cinemachine.CinemachineFreeLook cameraScript;
 
     private void Start()
     {
         SetLastSpawn(0);
         RespawnDebug();
+        cameraScript = cinemachineVCam.GetComponent<Cinemachine.CinemachineFreeLook>();
     }
     private void Teleport(Transform point)
     {
         cinemachineVCam.SetActive(false);
+        vCameras.SetActive(false);
         player.transform.position = point.position;
         player.transform.rotation = point.rotation;
     }
@@ -48,7 +55,7 @@ public class TeleportToSpawn : MonoBehaviour
         Teleport(spawnPoints.GetChild(point));
         GetComponent<GameManagement>().ToggleShipUI();
         GetComponent<GameManagement>().currentArea = point;
-        StartCoroutine(TurnOffMenu());
+        StartCoroutine(TurnOffMenu(point));
         for (int i = 0; i < seaSoundObjects.Length; i++)
         {
             if (i == point)
@@ -61,10 +68,27 @@ public class TeleportToSpawn : MonoBehaviour
             }
         }
     }
-    private IEnumerator TurnOffMenu()
+    private IEnumerator TurnOffMenu(int point)
     {
         yield return delay;
         cinemachineVCam.SetActive(true);
-        Camera.main.transform.LookAt(debugSpawnPoints.GetChild(GetComponent<GameManagement>().currentArea));
+        vCameras.SetActive(true);
+        switch (point)
+        {
+            case 0:
+                cameraScript.m_XAxis.Value = -91.3f;
+                cameraScript.m_YAxis.Value = 0.36f;
+                break;
+            case 1:
+                cameraScript.m_XAxis.Value = -151f;
+                cameraScript.m_YAxis.Value = 0.4f;
+                break;
+            case 2:
+                cameraScript.m_XAxis.Value = -75;
+                cameraScript.m_YAxis.Value = 0.37f;
+                break;
+            default:
+                break;
+        }
     }
 }

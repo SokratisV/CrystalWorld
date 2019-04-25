@@ -112,6 +112,7 @@
     <Compile Include="Assets\Scripts\PlayerSettings.cs" />
     <Compile Include="Assets\Scripts\PlayMiniGame.cs" />
     <Compile Include="Assets\Scripts\PopulateGridWord.cs" />
+    <Compile Include="Assets\Scripts\ProgressFeedback.cs" />
     <Compile Include="Assets\Scripts\Quest.cs" />
     <Compile Include="Assets\Scripts\Questions.cs" />
     <Compile Include="Assets\Scripts\RememberSquares.cs" />
@@ -134,11 +135,11 @@
     <Compile Include="Assets\Scripts\TerrainDetector.cs" />
     <Compile Include="Assets\Scripts\ThrowFood.cs" />
     <Compile Include="Assets\Scripts\TigerScript.cs" />
+    <Compile Include="Assets\Scripts\TriggerCutscene.cs" />
     <Compile Include="Assets\Scripts\TriggerDialog.cs" />
     <Compile Include="Assets\Scripts\TurnBasedOnCamera.cs" />
     <Compile Include="Assets\Scripts\VillageCrystalQuest.cs" />
     <Compile Include="Assets\Scripts\WallJump.cs" />
-    <Compile Include="Assets\TriggerCutscene.cs" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
