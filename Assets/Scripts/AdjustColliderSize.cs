@@ -5,13 +5,27 @@ public class AdjustColliderSize : MonoBehaviour
     private float initialHeight, adjustedHeight;
     private CapsuleCollider collider;
 
+    //private void Awake()
+    //{
+    //    adjustedHeight = 1f;
+    //    collider = GetComponent<CapsuleCollider>();
+    //    initialHeight = collider.height;
+    //}
     private void Awake()
     {
-        adjustedHeight = 1f;
         collider = GetComponent<CapsuleCollider>();
         initialHeight = collider.height;
     }
 
+    //void Update()
+    //{
+    //    collider.height += Time.deltaTime * 1.30f;
+    //    if (collider.height >= initialHeight)
+    //    {
+    //        collider.height = initialHeight;
+    //        enabled = false;
+    //    }
+    //}
     void Update()
     {
         collider.height += Time.deltaTime * 1.35f;
@@ -21,10 +35,13 @@ public class AdjustColliderSize : MonoBehaviour
             enabled = false;
         }
     }
-
-    private void OnEnable()
-    {
-        initialHeight = collider.height;
-        collider.height = adjustedHeight;
-    }
+    //private void OnEnable()
+    //{
+    //    initialHeight = collider.height;
+    //}
+    //private void OnEnable()
+    //{
+    //    initialHeight = collider.height;
+    //    collider.height = adjustedHeight;
+    //}
 }

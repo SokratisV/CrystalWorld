@@ -178,4 +178,9 @@ public class Moving : MonoBehaviour
         rb.AddForce(Vector3.up * force, ForceMode.Impulse);
     }
 
+    private void ActivateAdjustCollider()
+    {
+        GetComponent<AdjustColliderSize>().enabled = true;
+        transform.rotation = Quaternion.Euler(-20, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
+    }
 }

@@ -50,5 +50,6 @@ public class Climbing : MonoBehaviour
     private void OnEnable()
     {
         rb.useGravity = false;
+        GetComponent<CapsuleCollider>().height = 0;
     }
 }
