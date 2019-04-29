@@ -5,7 +5,7 @@ public class Moving : MonoBehaviour
 {
     public float desiredRotationSpeed;
     public Camera cam;
-    public int jumpForce = 50, glideForce = 1500;
+    public int glideForce = 1500;
     public bool allowMovement = true;
 
     private Animator anim;

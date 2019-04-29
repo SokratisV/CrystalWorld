@@ -83,7 +83,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForceDelay: 0.1
-  jumpForce: 50
+  jumpForce: 1
 --- !u!114 &114210710000657212
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForceDelay: 0.5
-  jumpForce: 35
+  jumpForce: 2
 --- !u!114 &114391972467120208
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForceDelay: 0.1
-  jumpForce: 75
+  jumpForce: 4
 --- !u!114 &114581469175304096
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForceDelay: 0.2
-  jumpForce: 75
+  jumpForce: 3
 --- !u!114 &114828783010834980
 MonoBehaviour:
   m_ObjectHideFlags: 1

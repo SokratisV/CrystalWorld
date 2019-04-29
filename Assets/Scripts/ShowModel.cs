@@ -13,7 +13,7 @@ public class ShowModel : MonoBehaviour
     public void ChangeModel()
     {
         playerModels.transform.GetChild(settings.character).gameObject.SetActive(false);
-        if (settings.character == 7)
+        if (settings.character == 5)
         {
             settings.character = 0;
         }
