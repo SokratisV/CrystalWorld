@@ -259,6 +259,7 @@ public class LoadFromJSON : MonoBehaviour
             b.interactable = true;
         }
         answers[buttonNumber - 1].colors = defaultButtonColors;
+        GetNextQuestion();
     }
     //Creating a JSON file by hand adds a lot of spaces/newlines and makes it unusable with ReadAllText
     //Alternatively use browserling.com/tools/remove-all-whitespace and jsonlint to correct it

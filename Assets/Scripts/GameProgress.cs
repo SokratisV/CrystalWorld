@@ -52,21 +52,18 @@ public class GameProgress : MonoBehaviour
             case "village":
                 //print("completed village quest");
                 villageCrystalCollected = true;
-                //eduLevels[settings.edutainmentLevel][0].GetComponent<Quest>().OnQuestComplete -= GameProgress_OnQuestComplete;
                 dialogScript.ShowDialog(1);
                 crystalCompleteImage[0].SetActive(true);
                 break;
             case "maze":
                 //print("completed maze quest");
                 mazeCrystalCollected = true;
-                //eduLevels[settings.edutainmentLevel][1].GetComponent<Quest>().OnQuestComplete -= GameProgress_OnQuestComplete;
                 dialogScript.ShowDialog(2);
                 crystalCompleteImage[1].SetActive(true);
                 break;
             case "animal":
                 //print("completed animal quest");
                 animalCrystalCollected = true;
-                //eduLevels[settings.edutainmentLevel][2].GetComponent<Quest>().OnQuestComplete -= GameProgress_OnQuestComplete;
                 dialogScript.ShowDialog(4);
                 crystalCompleteImage[2].SetActive(true);
                 break;
@@ -103,7 +100,7 @@ public class GameProgress : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         mainMenuButton.SetActive(true);
         dialogScript.ShowDialog(6);
-        yield return new WaitForSeconds(5 * 60 + 9);
+        yield return new WaitForSeconds(5 * 60 + 5);
         GetComponent<GameManagement>().ChangeScene(0);
     }
 }

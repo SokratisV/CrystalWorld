@@ -249,6 +249,9 @@ public class GameManagement : MonoBehaviour
             case 1:
                 Application.OpenURL("https://www.linkedin.com/in/sokratis-vogiatzakis-52852041/");
                 break;
+            case 2:
+                Application.OpenURL("https://nile.teicrete.gr/en/home/");
+                break;
             default:
                 Application.OpenURL("https://unity.com/");
                 break;
