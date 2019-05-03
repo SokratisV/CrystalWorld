@@ -17,7 +17,13 @@ public class MazeCrystalQuest : Quest
             crystalPiecesScore.text = "0";
         }
     }
-
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F10))
+        {
+            QuestProgress(gameObject);
+        }
+    }
     public override void QuestProgress(GameObject crystal)
     {
         crystalPiecesScore.GetComponentInParent<ProgressFeedback>().GiveFeedback();

@@ -17,6 +17,8 @@ public class StartOfGameWave : MonoBehaviour
             script.allowMovement = false;
             script.ZeroInputs();
             StartCoroutine(ResumeMoving());
+            GetComponent<BoxCollider>().size = new Vector3(1,2,1);
+            GetComponent<BoxCollider>().center = new Vector3(0, 1, 0);
             Destroy(this);
         }
     }

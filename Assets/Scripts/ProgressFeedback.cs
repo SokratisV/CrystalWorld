@@ -45,7 +45,6 @@ public class ProgressFeedback : MonoBehaviour
             currentTime -= Time.deltaTime;
             normalizedValue = currentTime / timeOfTravel;
             rectTransform.anchoredPosition = Vector3.Lerp(startPosition, endPosition, normalizedValue);
-            print(normalizedValue);
             yield return null;
         }
         GetComponent<Image>().color = colorStart;

@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
+using UnityEngine.Playables;
 
 public class GameProgress : MonoBehaviour
 {
@@ -7,10 +9,16 @@ public class GameProgress : MonoBehaviour
     private bool animalCrystalCollected;
     private NPCDialog dialogScript;
 
+    public GameObject peasantManCurrent;
+    public GameObject peasantManNew;
+    public GameObject player;
+    public Cinemachine.CinemachineVirtualCamera vcam6;
     public GameObject[] eduLevel0;
     public GameObject[] eduLevel1;
     public GameObject[] eduLevel2;
     public GameObject[] crystalCompleteImage;
+    public GameObject mainMenuButton;
+    public AudioClip thriller;
 
     private GameObject[][] eduLevels;
 
@@ -42,23 +50,23 @@ public class GameProgress : MonoBehaviour
         switch (((Quest)sender).questName)
         {
             case "village":
-                print("completed village quest");
+                //print("completed village quest");
                 villageCrystalCollected = true;
-                eduLevels[settings.edutainmentLevel][0].GetComponent<Quest>().OnQuestComplete -= GameProgress_OnQuestComplete;
+                //eduLevels[settings.edutainmentLevel][0].GetComponent<Quest>().OnQuestComplete -= GameProgress_OnQuestComplete;
                 dialogScript.ShowDialog(1);
                 crystalCompleteImage[0].SetActive(true);
                 break;
             case "maze":
-                print("completed maze quest");
+                //print("completed maze quest");
                 mazeCrystalCollected = true;
-                eduLevels[settings.edutainmentLevel][1].GetComponent<Quest>().OnQuestComplete -= GameProgress_OnQuestComplete;
+                //eduLevels[settings.edutainmentLevel][1].GetComponent<Quest>().OnQuestComplete -= GameProgress_OnQuestComplete;
                 dialogScript.ShowDialog(2);
                 crystalCompleteImage[1].SetActive(true);
                 break;
             case "animal":
-                print("completed animal quest");
+                //print("completed animal quest");
                 animalCrystalCollected = true;
-                eduLevels[settings.edutainmentLevel][2].GetComponent<Quest>().OnQuestComplete -= GameProgress_OnQuestComplete;
+                //eduLevels[settings.edutainmentLevel][2].GetComponent<Quest>().OnQuestComplete -= GameProgress_OnQuestComplete;
                 dialogScript.ShowDialog(4);
                 crystalCompleteImage[2].SetActive(true);
                 break;
@@ -76,7 +84,26 @@ public class GameProgress : MonoBehaviour
         }
         if (villageCrystalCollected && mazeCrystalCollected && animalCrystalCollected)
         {
-            dialogScript.ShowDialog(6);
+            StartCoroutine(WonTheGame());
         }
+    }
+    private IEnumerator WonTheGame()
+    {
+        GetComponent<PlayableDirector>().Play();
+        peasantManCurrent.SetActive(false);
+        peasantManNew.SetActive(true);
+        peasantManNew.GetComponent<VictoryDance>().Victory();
+        player.GetComponent<VictoryDance>().Victory();
+        GetComponents<AudioSource>()[0].clip = thriller;
+        GetComponents<AudioSource>()[0].volume = .025f;
+        GetComponents<AudioSource>()[0].Play();
+        vcam6.Priority = 15;
+        yield return new WaitForSeconds(9f);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        mainMenuButton.SetActive(true);
+        dialogScript.ShowDialog(6);
+        yield return new WaitForSeconds(5 * 60 + 9);
+        GetComponent<GameManagement>().ChangeScene(0);
     }
 }

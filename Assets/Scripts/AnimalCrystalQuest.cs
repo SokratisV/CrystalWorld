@@ -17,6 +17,13 @@ public class AnimalCrystalQuest : Quest
             crystalPiecesScore.text = "0";
         }
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F9))
+        {
+            QuestProgress(gameObject);
+        }
+    }
 
     public override void QuestProgress(GameObject crystal)
     {

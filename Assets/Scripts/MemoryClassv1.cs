@@ -15,7 +15,7 @@ public class MemoryClassv1 : MonoBehaviour{
     public AudioClip correctSound;
     public AudioClip incorrectSound;
     public AudioClip victorySound;
-    private new AudioSource audio;
+    private AudioSource audio;
     private static int score;
     private static int numberOfAttempts;
     //private TextMeshProUGUI scoreText;
@@ -30,7 +30,7 @@ public class MemoryClassv1 : MonoBehaviour{
         //attemptsText = GameObject.FindWithTag("AttemptsText").GetComponent<TextMeshProUGUI>();
         openCards = new GameObject[2];
         GetComponent<Image>().sprite = hiddenSprite;
-        audio = GetComponent<AudioSource>();
+        audio = GameObject.FindWithTag("GameController").GetComponents<AudioSource>()[1];
         //ResetScore();
         //ResetAttempts();
         blockedFromClicking = false;

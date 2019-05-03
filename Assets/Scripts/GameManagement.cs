@@ -239,4 +239,19 @@ public class GameManagement : MonoBehaviour
         cinemachineScript.m_XAxis.m_MaxSpeed = defaultSensitivityX + defaultSensitivityX * value / 100;
         cinemachineScript.m_YAxis.m_MaxSpeed = defaultSensitivityY + defaultSensitivityY * value / 100;
     }
+    public void OpenURLs(int index)
+    {
+        switch (index)
+        {
+            case 0:
+                Application.OpenURL("https://teicrete.gr/");
+                break;
+            case 1:
+                Application.OpenURL("https://www.linkedin.com/in/sokratis-vogiatzakis-52852041/");
+                break;
+            default:
+                Application.OpenURL("https://unity.com/");
+                break;
+        }
+    }
 }

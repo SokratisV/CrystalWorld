@@ -138,6 +138,7 @@
     <Compile Include="Assets\Scripts\TriggerCutscene.cs" />
     <Compile Include="Assets\Scripts\TriggerDialog.cs" />
     <Compile Include="Assets\Scripts\TurnBasedOnCamera.cs" />
+    <Compile Include="Assets\Scripts\VictoryDance.cs" />
     <Compile Include="Assets\Scripts\VillageCrystalQuest.cs" />
     <Compile Include="Assets\Scripts\WallJump.cs" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />

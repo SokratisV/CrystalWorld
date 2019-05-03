@@ -9,6 +9,13 @@ public class VillageCrystalQuest : Quest
         crystalPiecesOutOf.text = "/7";
         crystalPiecesScore.text = "0";
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F11))
+        {
+            QuestCompleted();
+        }
+    }
 
     public override void QuestProgress(GameObject crystal)
     {

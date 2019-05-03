@@ -127,7 +127,10 @@ public class NPCDialog : MonoBehaviour
     {
         currentDialog = number;
         UseCorrectText(number);
-        ToggleUI();
+        if (!isActive)
+        {
+            ToggleUI();
+        }
     }
     public void ShowGuideDialog()
     {

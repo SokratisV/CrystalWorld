@@ -31,7 +31,7 @@ public class MemoryClass : MonoBehaviour {
         {
             rememberSquares = GetComponentInParent<RememberSquares>();
         }
-        audio = GetComponentInParent<AudioSource>();
+        audio = GameObject.FindWithTag("GameController").GetComponents<AudioSource>()[1];
     }
     public void RevealCard()
     {

@@ -9,6 +9,7 @@ public class PlayMiniGame : MonoBehaviour
     public void WonGame()
     {
         OnMiniGameWin?.Invoke(this, EventArgs.Empty);
+        print("Won game");
     }
     public void LostGame()
     {
@@ -17,6 +18,7 @@ public class PlayMiniGame : MonoBehaviour
     public void CorrectQuestion()
     {
         OnQuestionAnswer?.Invoke(this, EventArgs.Empty);
+        print("Correct answer");
     }
     public void IncorrectQuestion()
     {
