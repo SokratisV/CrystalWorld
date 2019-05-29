@@ -140,7 +140,6 @@
     <Compile Include="Assets\Scripts\UIScripts\SwitchModel.cs" />
     <Compile Include="Assets\Scripts\UIScripts\TeleportMenu.cs" />
     <Compile Include="Assets\Scripts\UIScripts\TurnBasedOnCamera.cs" />
-    <Compile Include="Assets\ShipSeaEffect.cs" />
     <None Include="Assets\Shaders\CustomTessellation.cginc" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
@@ -150,7 +149,7 @@
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\Shaders\TessellationExample.shader" />
     <None Include="Assets\Imported\MedievalTownExteriors\Readme.txt" />
-    <None Include="Assets\Grass\Grass.shader" />
+    <None Include="Assets\Grass.shader" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\Imported\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
@@ -179,9 +178,6 @@
     <Reference Include="Cinemachine">
       <HintPath>C:/Users/Sokratis/Documents/GitHub/CrystalWorld/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
     </Reference>
-    <Reference Include="com.unity.multiplayer-hlapi.Editor">
-      <HintPath>C:/Users/Sokratis/Documents/GitHub/CrystalWorld/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/Sokratis/Documents/GitHub/CrystalWorld/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
@@ -196,9 +192,6 @@
     </Reference>
     <Reference Include="Unity.Postprocessing.Editor">
       <HintPath>C:/Users/Sokratis/Documents/GitHub/CrystalWorld/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="com.unity.multiplayer-weaver.Editor">
-      <HintPath>C:/Users/Sokratis/Documents/GitHub/CrystalWorld/Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.XR.LegacyInputHelpers">
       <HintPath>C:/Users/Sokratis/Documents/GitHub/CrystalWorld/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
@@ -224,8 +217,11 @@
     <Reference Include="UnityEditor.XR.LegacyInputHelpers">
       <HintPath>C:/Users/Sokratis/Documents/GitHub/CrystalWorld/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
     </Reference>
-    <Reference Include="com.unity.multiplayer-hlapi.Runtime">
-      <HintPath>C:/Users/Sokratis/Documents/GitHub/CrystalWorld/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll</HintPath>
+    <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
+      <HintPath>C:/Users/Sokratis/Documents/GitHub/CrystalWorld/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.AddOns.Editor">
+      <HintPath>C:/Users/Sokratis/Documents/GitHub/CrystalWorld/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.4f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
