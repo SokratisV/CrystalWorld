@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SwitchModel : MonoBehaviour
 {
@@ -7,11 +8,11 @@ public class SwitchModel : MonoBehaviour
     public GameObject playerObject;
     private GameObject tempModel;
     private int index = 0;
-    public PlayerSettings playerSettings;
+    public MyPlayerSettings settings;
 
     private void Start()
     {
-        ChooseModel(playerSettings.character);
+        ChooseModel(settings.character);
     }
     public void ChangeModel()
     {

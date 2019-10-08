@@ -4,7 +4,7 @@ public class CrystalPickup : MonoBehaviour
 {
     public AudioClip pickupSound;
     public GameObject gameManager;
-    public PlayerSettings settings;
+    public MyPlayerSettings settings;
 
     private void OnTriggerEnter(Collider other)
     {

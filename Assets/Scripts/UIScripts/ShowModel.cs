@@ -3,11 +3,11 @@
 public class ShowModel : MonoBehaviour
 {
     public GameObject playerModels;
-    public PlayerSettings settings;
+    public MyPlayerSettings settings;
 
     void Start()
     {
-        playerModels.transform.GetChild(settings.character).gameObject.SetActive(true);    
+        playerModels.transform.GetChild(settings.character).gameObject.SetActive(true);
     }
 
     public void ChangeModel()
@@ -22,5 +22,6 @@ public class ShowModel : MonoBehaviour
             settings.character += 1;
         }
         playerModels.transform.GetChild(settings.character).gameObject.SetActive(true);
+        playerModels.transform.GetChild(settings.character).GetComponent<Animator>().SetTrigger("Wave");
     }
 }

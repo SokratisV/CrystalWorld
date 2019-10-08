@@ -5,7 +5,7 @@ public class HighlightElement : MonoBehaviour
 {
     private Color defaultColor;
     public Color highlightedColor;
-    public PlayerSettings settings;
+    public MyPlayerSettings settings;
 
     private void Start()
     {

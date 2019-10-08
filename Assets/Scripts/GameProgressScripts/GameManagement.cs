@@ -14,7 +14,7 @@ public class GameManagement : MonoBehaviour
     public PostProcessProfile profile;
     public GameObject shipMenuUI;
     public GameObject controlsPanel;
-    public PlayerSettings settings;
+    public MyPlayerSettings settings;
     public int currentArea = 0; //0 - Village, 1 - Forest, 2 - Maze
 
     [SerializeField]

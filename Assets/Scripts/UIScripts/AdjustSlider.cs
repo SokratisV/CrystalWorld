@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class AdjustSlider : MonoBehaviour
 {
-    public PlayerSettings settings;
+    public MyPlayerSettings settings;
 
     private void Start()
     {

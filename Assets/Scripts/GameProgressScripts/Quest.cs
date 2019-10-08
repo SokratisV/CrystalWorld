@@ -8,7 +8,7 @@ public abstract class Quest : MonoBehaviour
     public string questName;
     public GameObject gameManager;
     public AudioClip questCompletedSound;
-    public PlayerSettings settings;
+    public MyPlayerSettings settings;
     public GameObject background;
     public TextMeshProUGUI crystalPiecesOutOf;
     public TextMeshProUGUI crystalPiecesScore;

@@ -22,7 +22,7 @@ public class GameProgress : MonoBehaviour
 
     private GameObject[][] eduLevels;
 
-    public PlayerSettings settings;
+    public MyPlayerSettings settings;
 
     private void Start()
     {

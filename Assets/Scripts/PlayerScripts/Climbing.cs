@@ -22,12 +22,12 @@ public class Climbing : MonoBehaviour
             InputX = Input.GetAxis("Horizontal");
             InputZ = Input.GetAxis("Vertical");
 
-            if (Input.GetKeyDown("space"))
-            {
-                anim.SetTrigger("wallJump");
-                anim.SetBool("isClimbing", false);
-                //rb.velocity = Vector3.back * 10;
-            }
+            // if (Input.GetKeyDown("space"))
+            // {
+            //     anim.SetTrigger("wallJump");
+            //     anim.SetBool("isClimbing", false);
+            //     //rb.velocity = Vector3.back * 10;
+            // }
             PlayerClimb(InputX, InputZ);
         }
     }
@@ -50,6 +50,7 @@ public class Climbing : MonoBehaviour
     private void OnEnable()
     {
         rb.useGravity = false;
-        GetComponent<CapsuleCollider>().height = 0;
+        rb.isKinematic = true;
+        // GetComponent<CapsuleCollider>().height = 0;
     }
 }

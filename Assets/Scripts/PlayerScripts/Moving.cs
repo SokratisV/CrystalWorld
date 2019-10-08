@@ -5,7 +5,7 @@ public class Moving : MonoBehaviour
 {
     public float desiredRotationSpeed;
     public Camera cam;
-    public int glideForce = 1500;
+    public int glideForce = 750;
     public bool allowMovement = true;
 
     private Animator anim;
@@ -165,6 +165,7 @@ public class Moving : MonoBehaviour
     private void OnEnable()
     {
         rb.useGravity = true;
+        rb.isKinematic = false;
     }
 
     public void JumpForce(float delay, int force)
@@ -180,7 +181,7 @@ public class Moving : MonoBehaviour
 
     private void ActivateAdjustCollider()
     {
-        GetComponent<AdjustColliderSize>().enabled = true;
-        transform.rotation = Quaternion.Euler(-20, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
+        // GetComponent<AdjustColliderSize>().enabled = true;
+        // transform.rotation = Quaternion.Euler(-20, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
     }
 }
