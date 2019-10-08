@@ -236,6 +236,7 @@
      <None Include="Assets\Aura 2\System\Code\Shaders\Shaders\BuiltinReplacement\BillboardTree.shader" />
      <None Include="Assets\Aura 2\System\Code\Shaders\ComputeShaders\Includes\DirectionalLightInjection.cginc" />
      <None Include="Assets\Aura 2\System\Code\Shaders\ComputeShaders\Includes\LightProbesInjection.cginc" />
+     <None Include="Assets\Shaders\WaterShader.shader" />
      <None Include="Assets\Aura 2\System\Code\Shaders\Includes\AuraParticlesUsage.cginc" />
      <None Include="Assets\Imported\MedievalTownExteriors\Readme.txt" />
      <None Include="Assets\Grass.shader" />
