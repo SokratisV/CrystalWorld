@@ -72,7 +72,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   desiredRotationSpeed: 0.2
   cam: {fileID: 0}
-  jumpForce: 1550
   glideForce: 1500
   allowMovement: 1
 --- !u!114 &3541287006808082269
@@ -152,7 +151,7 @@ MonoBehaviour:
   - {fileID: 9000000, guid: 39fa5f3268331964caaf634f19e94269, type: 3}
   - {fileID: 9000000, guid: ee9d3f4c02b178a40a90a86cc8b3a75f, type: 3}
   playerObject: {fileID: 1940978277283523435}
-  playerSettings: {fileID: 11400000, guid: c2db15a8171d7e04daf8607c6248bf6d, type: 2}
+  settings: {fileID: 0}
 --- !u!114 &7566262357537289257
 MonoBehaviour:
   m_ObjectHideFlags: 0

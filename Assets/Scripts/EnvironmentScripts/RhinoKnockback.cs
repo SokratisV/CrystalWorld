@@ -19,10 +19,14 @@ public class RhinoKnockback : MonoBehaviour
 
     private IEnumerator KnockBack()
     {
-        while  (timer < .1)
+        while  (timer < .1f)
         {
             timer += Time.deltaTime / timeToMove;
             transform.position = Vector3.Lerp(transform.position, rhinoKnockbackLocation.position, timer);
+            if (Vector3.Distance(transform.position, rhinoKnockbackLocation.position) < .5f){
+                transform.position = rhinoKnockbackLocation.position;
+                break;
+            }
             yield return null;
         }
     }
